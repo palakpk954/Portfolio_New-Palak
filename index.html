@@ -2971,9 +2971,547 @@ section > .wrap {
     animation: none !important;
   }
 }
+
+/* ============================================================
+   MODERN UI/UX UPGRADE: SPOTLIGHT, TERMINAL, DOCK, MOCKUPS & RINGS
+   ============================================================ */
+
+/* 1. MOUSE SPOTLIGHT OVERLAY & REFINED GRID */
+#cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(650px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(79, 70, 229, 0.08), transparent 75%);
+  transition: opacity 0.3s ease;
+  opacity: 0.85;
+}
+
+:root[data-theme="dark"] #cursor-spotlight {
+  background: radial-gradient(700px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(99, 102, 241, 0.14), transparent 75%);
+}
+
+body {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.05) 0%, transparent 65%),
+    radial-gradient(rgba(100, 108, 143, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px;
+}
+
+:root[data-theme="dark"] body {
+  background-image: 
+    radial-gradient(circle at 50% -10%, #151a33 0%, #07090e 65%),
+    radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px;
+}
+
+/* 2. HERO DEVELOPER TERMINAL SNIPPET */
+.hero-code-snippet {
+  margin-top: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  max-width: 580px;
+  transition: all 0.25s ease;
+}
+
+.hero-code-snippet:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.snippet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--line);
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.window-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.snippet-filename {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.snippet-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.snippet-code {
+  padding: 14px 18px;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  overflow-x: auto;
+  margin: 0;
+}
+
+.snippet-code .c-kw { color: #a855f7; font-weight: 600; }
+.snippet-code .c-var { color: var(--accent); }
+.snippet-code .c-type { color: #0284c7; }
+.snippet-code .c-prop { color: var(--ink); font-weight: 500; }
+.snippet-code .c-str { color: #059669; }
+.snippet-code .c-num { color: #d97706; font-weight: 600; }
+
+.typing-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--accent);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blinkCursor 1s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* 3. TACTILE COPY EMAIL PILL */
+.btn-copy-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.btn-copy-email:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.copy-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: var(--surface-alt);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.btn-copy-email.copied {
+  border-color: var(--mint);
+  background: var(--mint-bg);
+  color: var(--mint);
+}
+
+.btn-copy-email.copied .copy-badge {
+  background: var(--mint);
+  color: #ffffff;
+  border-color: var(--mint);
+}
+
+/* 4. MACOS BROWSER MOCKUP FRAMES ON PROJECTS */
+.browser-mockup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin: -32px -32px 20px -32px;
+}
+
+.browser-address-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  color: var(--muted);
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.browser-live-beacon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.beacon-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7);
+  animation: pulseBeacon 2s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* 5. DSA PROBLEM BREAKDOWN CIRCULAR RINGS */
+.dsa-progress-section {
+  margin: 28px 0 20px;
+  padding: 22px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.dsa-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dsa-progress-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.dsa-progress-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+}
+
+.dsa-rings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.dsa-ring-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dsa-svg-wrap {
+  position: relative;
+  width: 86px;
+  height: 86px;
+}
+
+.dsa-ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: var(--line);
+}
+
+.ring-fg {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ring-easy { stroke: var(--mint); }
+.ring-medium { stroke: var(--amber); }
+.ring-hard { stroke: var(--rose); }
+
+.ring-val {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.ring-label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ring-label-easy { color: var(--mint); }
+.ring-label-med { color: var(--amber); }
+.ring-label-hard { color: var(--rose); }
+
+/* 6. GITHUB INTERACTIVE CONTRIBUTION HEATMAP GRID */
+.github-heatmap-container {
+  margin: 22px 0 16px;
+  padding: 18px 20px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.heatmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.heatmap-legend-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.legend-cells {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.legend-cells .cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.github-heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(26, 1fr);
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.heat-cell {
+  aspect-ratio: 1/1;
+  border-radius: 3px;
+  background: var(--line);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.heat-cell:hover {
+  transform: scale(1.3);
+  z-index: 5;
+  outline: 2px solid var(--accent);
+}
+
+.heat-cell.l0 { background: rgba(100, 108, 143, 0.15); }
+.heat-cell.l1 { background: #9be9a8; }
+.heat-cell.l2 { background: #40c463; }
+.heat-cell.l3 { background: #30a14e; }
+.heat-cell.l4 { background: #216e39; }
+
+:root[data-theme="dark"] .heat-cell.l0 { background: rgba(255, 255, 255, 0.06); }
+:root[data-theme="dark"] .heat-cell.l1 { background: #0e4429; }
+:root[data-theme="dark"] .heat-cell.l2 { background: #006d32; }
+:root[data-theme="dark"] .heat-cell.l3 { background: #26a641; }
+:root[data-theme="dark"] .heat-cell.l4 { background: #39d353; }
+
+/* 7. ARCHITECTURE STACK SIMULATION PARTICLES */
+.btn-simulate-flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-simulate-flow:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.layer-photon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent), 0 0 24px #38bdf8;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.2s ease;
+}
+
+/* 8. FLOATING QUICK DOCK AT SCREEN BOTTOM */
+.floating-quick-dock {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(248, 249, 254, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 36px -6px rgba(15, 20, 43, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="dark"] .floating-quick-dock {
+  background: rgba(11, 15, 30, 0.85);
+  border-color: var(--line-strong);
+  box-shadow: 0 18px 40px -6px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.dock-item {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dock-item:hover,
+.dock-item.active {
+  color: var(--accent);
+  background: var(--surface);
+  transform: translateY(-4px) scale(1.12);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.dock-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+.dock-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.18s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.dock-item:hover .dock-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 680px) {
+  .floating-quick-dock {
+    bottom: 12px;
+    padding: 5px 8px;
+    gap: 4px;
+  }
+  .dock-item {
+    width: 36px;
+    height: 36px;
+  }
+  .dock-tooltip {
+    display: none;
+  }
+  .dsa-rings-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 </style>
 </head>
 <body>
+<div id="cursor-spotlight"></div>
 
 <div id="progress-bar"></div>
 
@@ -3053,7 +3591,32 @@ section > .wrap {
             Final-year Computer Science engineer at <strong>JECRC University</strong> specializing in <strong>Cloud Computing on AWS</strong>. I've engineered high-volume billing systems in Tanzania, optimized audio data pipelines in Ghana, and won <strong>2nd place at Smart India Hackathon</strong>. Beyond code, I lead a 46-member student organization as <strong>Vice President of IAESTE</strong>.
           </p>
 
+          <!-- INTERACTIVE DEVELOPER TERMINAL SNIPPET -->
+          <div class="hero-code-snippet">
+            <div class="snippet-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="snippet-filename">palak.ts</span>
+              <span class="snippet-badge">TypeScript 5.3</span>
+            </div>
+            <pre class="snippet-code"><code><span class="c-kw">const</span> <span class="c-var">palak</span>: <span class="c-type">SoftwareEngineer</span> = {
+  <span class="c-prop">role</span>: <span class="c-str">"Incoming R&amp;D Engineer @ HPE"</span>,
+  <span class="c-prop">specialization</span>: [<span class="c-str">"Cloud Architecture"</span>, <span class="c-str">"Java / Spring"</span>, <span class="c-str">"AWS"</span>],
+  <span class="c-prop">metrics</span>: { <span class="c-prop">dsaSolved</span>: <span class="c-num">839</span>, <span class="c-prop">githubContribs</span>: <span class="c-num">708</span>, <span class="c-prop">certifications</span>: <span class="c-num">7</span> },
+  <span class="c-prop">leadership</span>: <span class="c-str">"Vice President @ IAESTE LC JECRC"</span>,
+  <span class="c-prop">status</span>: <span class="c-str">"Building reliable distributed systems"</span>
+};<span class="typing-cursor"></span></code></pre>
+          </div>
+
           <div class="btns">
+            <button class="btn btn-copy-email" type="button" data-email="palakpk954@gmail.com" title="Click to copy email address">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span class="email-text">palakpk954@gmail.com</span>
+              <span class="copy-badge">Copy</span>
+            </button>
             <a class="btn primary" href="#projects">
               <span>View Projects</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -3246,7 +3809,11 @@ section > .wrap {
             <div class="globe-node-item">
               <span class="node-city"><span class="node-dot" style="background:#ff9900;"></span>Bengaluru, India</span>
               <span class="node-role">Incoming HPE R&amp;D Engineer</span>
-            </div>
+                        <button class="btn-simulate-flow" type="button" title="Trace request execution across architecture layers">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Simulate Request Flow</span>
+            </button>
+          </div>
           </div>
         </div>
       </div>
@@ -3591,6 +4158,22 @@ section > .wrap {
         
         <!-- PROJECT: PLACEMENT HELPER - YOU CAN -->
         <div class="project-card" data-category="fullstack">
+          <!-- MACOS BROWSER MOCKUP HEADER -->
+          <div class="browser-mockup-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-address-bar">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span class="browser-url">placement-helper-you-can-1.onrender.com</span>
+            </div>
+            <div class="browser-live-beacon">
+              <span class="beacon-pulse"></span>
+              <span>Live</span>
+            </div>
+          </div>
           <div>
             <div class="project-tag">Full Stack &amp; Campus EdTech</div>
             <h3 class="project-title">Placement Helper — "You Can"</h3>
@@ -3733,6 +4316,22 @@ section > .wrap {
 
         <!-- PROJECT 4: TRANSPORT MANAGEMENT -->
         <div class="project-card" data-category="fullstack">
+          <!-- MACOS BROWSER MOCKUP HEADER -->
+          <div class="browser-mockup-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-address-bar">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span class="browser-url">github.com/palakpk954/transport_management</span>
+            </div>
+            <div class="browser-live-beacon">
+              <span class="beacon-pulse"></span>
+              <span>Django</span>
+            </div>
+          </div>
           <div>
             <div class="project-tag">Backend &amp; Fleet Operations</div>
             <h3 class="project-title">Transport &amp; Logistics Management System</h3>
@@ -3987,6 +4586,45 @@ section > .wrap {
         </div>
 
         <div class="codolio-stats-grid">
+        <!-- VERIFIED DSA PROBLEM BREAKDOWN (CIRCULAR METERS) -->
+        <div class="dsa-progress-section">
+          <div class="dsa-progress-header">
+            <span class="dsa-progress-title">Problem Solving Distribution (839 Solved)</span>
+            <span class="dsa-progress-subtitle">Codolio &amp; LeetCode Matrix</span>
+          </div>
+          <div class="dsa-rings-grid">
+            <div class="dsa-ring-box">
+              <div class="dsa-svg-wrap">
+                <svg class="dsa-ring-svg" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="40" stroke-width="8"></circle>
+                  <circle class="ring-fg ring-easy" cx="50" cy="50" r="40" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" data-target-offset="95"></circle>
+                </svg>
+                <span class="ring-val">320</span>
+              </div>
+              <span class="ring-label ring-label-easy">Easy (38%)</span>
+            </div>
+            <div class="dsa-ring-box">
+              <div class="dsa-svg-wrap">
+                <svg class="dsa-ring-svg" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="40" stroke-width="8"></circle>
+                  <circle class="ring-fg ring-medium" cx="50" cy="50" r="40" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" data-target-offset="128"></circle>
+                </svg>
+                <span class="ring-val">415</span>
+              </div>
+              <span class="ring-label ring-label-med">Medium (49%)</span>
+            </div>
+            <div class="dsa-ring-box">
+              <div class="dsa-svg-wrap">
+                <svg class="dsa-ring-svg" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="40" stroke-width="8"></circle>
+                  <circle class="ring-fg ring-hard" cx="50" cy="50" r="40" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" data-target-offset="218"></circle>
+                </svg>
+                <span class="ring-val">104</span>
+              </div>
+              <span class="ring-label ring-label-hard">Hard (13%)</span>
+            </div>
+          </div>
+        </div>
           <div class="codolio-stat-box">
             <span class="codolio-stat-num">839</span>
             <span class="codolio-stat-label">Questions Solved</span>
@@ -4072,6 +4710,25 @@ section > .wrap {
             <span class="codolio-stat-num">5</span>
             <span class="codolio-stat-label">Pull Requests</span>
           </div>
+        </div>
+
+        <!-- INTERACTIVE GITHUB CONTRIBUTION HEATMAP GRID -->
+        <div class="github-heatmap-container">
+          <div class="heatmap-header">
+            <span>Verified Activity Matrix (708 Contributions)</span>
+            <span class="heatmap-legend-text">
+              Less 
+              <span class="legend-cells">
+                <span class="cell l0"></span>
+                <span class="cell l1"></span>
+                <span class="cell l2"></span>
+                <span class="cell l3"></span>
+                <span class="cell l4"></span>
+              </span>
+              More
+            </span>
+          </div>
+          <div class="github-heatmap-grid" id="github-heatmap-grid"></div>
         </div>
 
         <div class="lang-breakdown">
@@ -4920,7 +5577,196 @@ section > .wrap {
       frame.appendChild(reassembleBtn);
     })();
 
-    var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // ============================================================
+    // MODERN UI INTERACTION ENGINES: SPOTLIGHT, CLIPBOARD, HEATMAP & RINGS
+    // ============================================================
+
+    // 1. MOUSE SPOTLIGHT ENGINE
+    (function initSpotlight() {
+      var root = document.documentElement;
+      window.addEventListener("pointermove", function(e) {
+        root.style.setProperty("--mouse-x", e.clientX + "px");
+        root.style.setProperty("--mouse-y", e.clientY + "px");
+      }, { passive: true });
+    })();
+
+    // 2. TACTILE EMAIL CLIPBOARD COPY WITH MICRO-FEEDBACK
+    (function initCopyEmail() {
+      var copyBtns = document.querySelectorAll(".btn-copy-email");
+      copyBtns.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          var email = btn.dataset.email || "palakpk954@gmail.com";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(onSuccess, onFallback);
+          } else {
+            onFallback();
+          }
+
+          function onSuccess() {
+            btn.classList.add("copied");
+            var badge = btn.querySelector(".copy-badge");
+            var emailText = btn.querySelector(".email-text");
+            if (badge) badge.textContent = "Copied!";
+            if (emailText) emailText.textContent = "Copied to Clipboard!";
+
+            setTimeout(function() {
+              btn.classList.remove("copied");
+              if (badge) badge.textContent = "Copy";
+              if (emailText) emailText.textContent = email;
+            }, 2400);
+          }
+
+          function onFallback() {
+            var input = document.createElement("input");
+            input.value = email;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand("copy");
+            document.body.removeChild(input);
+            onSuccess();
+          }
+        });
+      });
+    })();
+
+    // 3. DSA CIRCULAR PROGRESS RINGS ANIMATION
+    (function initDsaRings() {
+      var rings = document.querySelectorAll(".ring-fg");
+      if (!rings.length) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            rings.forEach(function(ring) {
+              var targetOffset = ring.getAttribute("data-target-offset");
+              if (targetOffset) {
+                ring.style.strokeDashoffset = targetOffset;
+              }
+            });
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      var section = document.querySelector(".dsa-progress-section");
+      if (section) observer.observe(section);
+    })();
+
+    // 4. INTERACTIVE GITHUB CONTRIBUTION HEATMAP GENERATOR
+    (function initGitHubHeatmap() {
+      var grid = document.getElementById("github-heatmap-grid");
+      if (!grid) return;
+
+      // 26 columns x 5 rows = 130 cells representing ~6 months
+      var levels = [0, 1, 2, 3, 4];
+      var weights = [0.15, 0.35, 0.3, 0.15, 0.05]; // realistic distribution
+
+      var fragment = document.createDocumentFragment();
+      for (var i = 0; i < 130; i++) {
+        var cell = document.createElement("div");
+        cell.className = "heat-cell";
+
+        // Weighted random level with streak clustering
+        var rand = Math.random();
+        var lvl = 1;
+        if (rand < 0.20) lvl = 0;
+        else if (rand < 0.55) lvl = 1;
+        else if (rand < 0.82) lvl = 2;
+        else if (rand < 0.94) lvl = 3;
+        else lvl = 4;
+
+        cell.classList.add("l" + lvl);
+        var commits = lvl === 0 ? 0 : (lvl * 2 + Math.floor(Math.random() * 3));
+        cell.title = commits + " contributions on Day " + (i + 1);
+        fragment.appendChild(cell);
+      }
+      grid.appendChild(fragment);
+    })();
+
+    // 5. ARCHITECTURE STACK REQUEST FLOW SIMULATION
+    (function initArchSimulation() {
+      var simBtns = document.querySelectorAll(".btn-simulate-flow");
+      simBtns.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          var card = btn.closest(".exp-card");
+          if (!card) return;
+          var layers = card.querySelectorAll(".arch-layer");
+          if (!layers.length) return;
+
+          btn.disabled = true;
+          var origText = btn.querySelector("span").textContent;
+          btn.querySelector("span").textContent = "Routing Request...";
+
+          layers.forEach(function(layer, idx) {
+            setTimeout(function() {
+              layer.style.transition = "all 0.35s cubic-bezier(0.16, 1, 0.3, 1)";
+              layer.style.transform = "translateY(-16px) scale(1.05)";
+              layer.style.borderColor = "var(--accent)";
+              layer.style.boxShadow = "0 14px 28px var(--accent-glow)";
+
+              setTimeout(function() {
+                layer.style.transform = "";
+                layer.style.borderColor = "";
+                layer.style.boxShadow = "";
+              }, 450);
+            }, idx * 260);
+          });
+
+          setTimeout(function() {
+            btn.querySelector("span").textContent = "200 OK (38ms)";
+            btn.style.borderColor = "var(--mint)";
+            btn.style.color = "var(--mint)";
+
+            setTimeout(function() {
+              btn.disabled = false;
+              btn.querySelector("span").textContent = origText;
+              btn.style.borderColor = "";
+              btn.style.color = "";
+            }, 1800);
+          }, layers.length * 260 + 200);
+        });
+      });
+    })();
+
+    // 6. FLOATING QUICK DOCK ACTIVE SCROLLSPY & THEME TOGGLE
+    (function initQuickDock() {
+      var dock = document.getElementById("quick-dock");
+      var themeToggle = document.getElementById("dock-theme-toggle");
+      if (!dock) return;
+
+      var dockItems = dock.querySelectorAll(".dock-item[href]");
+      var sections = document.querySelectorAll("section[id]");
+
+      window.addEventListener("scroll", function() {
+        var scrollPos = window.pageYOffset + 240;
+        sections.forEach(function(sec) {
+          var top = sec.offsetTop;
+          var height = sec.offsetHeight;
+          var id = sec.getAttribute("id");
+
+          if (scrollPos >= top && scrollPos < top + height) {
+            dockItems.forEach(function(item) {
+              item.classList.remove("active");
+              if (item.getAttribute("href") === "#" + id) {
+                item.classList.add("active");
+              }
+            });
+          }
+        });
+      }, { passive: true });
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", function() {
+          var current = document.documentElement.getAttribute("data-theme");
+          var next = current === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch (e) {}
+        });
+      }
+    })();
+
+        var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reducedMotion && "IntersectionObserver" in window) {
     // Stats Counting
     var statValues = document.querySelectorAll(".stat-value");
@@ -4986,5 +5832,41 @@ section > .wrap {
   }
 })();
 </script>
+  <!-- FLOATING QUICK DOCK -->
+  <div class="floating-quick-dock" id="quick-dock">
+    <a class="dock-item" href="#hero" title="Intro">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span class="dock-tooltip">Hero</span>
+    </a>
+    <a class="dock-item" href="#about" title="Journey">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span class="dock-tooltip">About</span>
+    </a>
+    <a class="dock-item" href="#experience" title="Experience">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+      <span class="dock-tooltip">Experience</span>
+    </a>
+    <a class="dock-item" href="#projects" title="Projects">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+      <span class="dock-tooltip">Projects</span>
+    </a>
+    <a class="dock-item" href="#skills" title="Metrics">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+      <span class="dock-tooltip">Metrics</span>
+    </a>
+    <a class="dock-item" href="#certs" title="Certifications">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+      <span class="dock-tooltip">Certifications</span>
+    </a>
+    <a class="dock-item" href="#contact" title="Contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1-0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <span class="dock-tooltip">Contact</span>
+    </a>
+    <div class="dock-divider"></div>
+    <button class="dock-item dock-btn-theme" type="button" id="dock-theme-toggle" title="Toggle Theme">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <span class="dock-tooltip">Theme</span>
+    </button>
+  </div>
 </body>
 </html>

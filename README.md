@@ -6,7 +6,17 @@ A cutting-edge, high-performance personal portfolio website built with modern re
 
 ---
 
-## 🌟 Key Highlights & Features
+## Key Highlights & Features
+
+- **Modern UI & Tactile Micro-Interactions**:
+  - **Dynamic Mouse Spotlight Grid**: Ambient radial flashlight following cursor across a subtle blueprint dot-matrix grid.
+  - **Hero Developer Terminal**: Interactive TypeScript code snippet (`palak.ts`) with macOS window controls, syntax coloring, and live cursor.
+  - **Tactile One-Click Email Copy**: Dedicated clipboard pill (`palakpk954@gmail.com`) with instant animated feedback.
+  - **macOS Browser Mockup Frames**: Real-world application frames with traffic-light dots, faux URL bars, and live production status beacons on featured projects.
+  - **Floating Island Quick Dock**: Bottom glassmorphic navigation dock with active section scroll-spy, tooltips, and theme toggle.
+  - **DSA Circular Progress Rings**: 3-tier SVG circular meters visualizing Easy (320), Medium (415), and Hard (104) problem distribution.
+  - **Interactive GitHub Contribution Heatmap**: Visual activity matrix representing 708 contributions with interactive hover tooltips.
+  - **Interactive Architecture Flow Simulation**: Live request simulation button animating packet traversal through 3D system layers.
 
 - **3D Interactive Experience**:
   - **Hero 3D Wave Mesh**: Real-time undulating 3D sine-wave canvas that dynamically reacts to mouse movements.
@@ -39,7 +49,7 @@ A cutting-edge, high-performance personal portfolio website built with modern re
 
 ---
 
-## 🚀 Quick Start (Local Run)
+## Quick Start (Local Run)
 
 This portfolio is completely self-contained in a single HTML file with embedded styles, vector graphics, and scripts.
 
@@ -59,13 +69,9 @@ Then visit `http://localhost:8000/`.
 
 ---
 
-## 📬 Connect with Me
+## Tech Stack & Architecture
 
-- **LinkedIn**: [palakkumari0604](https://www.linkedin.com/in/palakkumari0604/)
-- **GitHub**: [palakpk954](https://github.com/palakpk954)
-- **Codolio**: [Palak954](https://codolio.com/profile/Palak954)
-- **Email**: [palakkumari1232604@gmail.com](mailto:palakkumari1232604@gmail.com)
-
----
-
-© Palak Kumari. Designed and engineered with precision.
+- **Markup & Styling**: Semantic HTML5, CSS Custom Properties (Theme tokens for Light & Dark mode), CSS Grid, Flexbox, Backdrop Filter.
+- **3D & Vector Graphics**: HTML5 Canvas (3D Wave Projection & Rotating Particle Sphere), SVG Vector Icons & Progress Meters.
+- **Animation Systems**: CSS 3D Transforms, `requestAnimationFrame`, `IntersectionObserver`, cubic-bezier easing.
+- **Dependencies**: 0 external runtime JavaScript libraries (pure Vanilla JavaScript for instant load times).
