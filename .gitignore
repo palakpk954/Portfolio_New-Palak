@@ -1,0 +1,5 @@
+# Ignore backups and temporary scratch files
+*.bak
+scratch/
+__pycache__/
+*.pyc
