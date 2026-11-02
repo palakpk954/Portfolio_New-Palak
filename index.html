@@ -3509,6 +3509,460 @@ body {
   }
 }
 
+
+/* ============================================================
+   BULLETPROOF MOBILE RESPONSIVENESS SUITE (PHONES & TABLETS)
+   ============================================================ */
+
+/* 1. GLOBAL ROOT PREVENT HORIZONTAL OVERFLOW */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
+section {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* 2. TABLET & MOBILE (< 860px) */
+@media (max-width: 860px) {
+  header.nav .wrap {
+    height: 60px !important;
+    padding: 0 16px !important;
+  }
+
+  .brand {
+    font-size: 16.5px !important;
+    gap: 8px !important;
+  }
+
+  .brand-status {
+    display: none !important;
+  }
+
+  .brand-avatar {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+  }
+
+  .circle-wire-ring, .glass-sphere-3d {
+    display: none !important;
+  }
+}
+
+/* 3. MOBILE SCREENS (< 768px) */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  section {
+    padding: 44px 0 !important;
+  }
+
+  .section-title {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+  }
+
+  .section-desc {
+    font-size: 15px !important;
+  }
+
+  /* FLATTEN GRIDS INTO CLEAN 1-COLUMN FOR PHONES */
+  .experience-grid,
+  .projects-grid,
+  .pillars-grid,
+  .skills-grid,
+  .certs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    perspective: none !important;
+  }
+
+  .exp-card,
+  .project-card,
+  .pillar-card,
+  .skill-category-card,
+  .cert-card {
+    padding: 20px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    transform-style: flat !important;
+  }
+
+  .exp-card:hover, .project-card:hover, .cert-card:hover {
+    transform: none !important;
+  }
+
+  /* GLOBE GRID */
+  .globe-3d-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  #globe-3d-canvas {
+    max-width: 260px !important;
+    max-height: 260px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* 4. SMARTPHONES (< 640px) */
+@media (max-width: 640px) {
+  /* HERO SECTION */
+  .hero {
+    padding: 28px 0 36px !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .hero-pill {
+    font-size: 11.5px !important;
+    padding: 6px 12px !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero h1 {
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-role {
+    font-size: 18px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero p.lead {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-code-snippet {
+    margin-top: 18px !important;
+    max-width: 100% !important;
+    font-size: 11px !important;
+  }
+
+  .snippet-header {
+    padding: 8px 12px !important;
+  }
+
+  .snippet-code {
+    padding: 10px 12px !important;
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+  }
+
+  .btns {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .btn, .btn-copy-email {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 11px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-socials {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    margin-top: 18px !important;
+    width: 100% !important;
+  }
+
+  .hero-social-link {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .portrait-container {
+    max-width: 240px !important;
+    margin: 0 auto !important;
+    order: -1 !important;
+  }
+
+  .circular-stamp {
+    display: none !important;
+  }
+
+  .floating-badge {
+    display: none !important;
+  }
+
+  /* STATS CARD TICKER */
+  .stats-strip {
+    margin: 20px 0 40px !important;
+  }
+
+  .stats-card {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .stat-item {
+    padding: 16px 14px !important;
+  }
+
+  .stat-value {
+    font-size: 26px !important;
+  }
+
+  .stat-label {
+    font-size: 12px !important;
+  }
+
+  .stat-desc {
+    display: none !important;
+  }
+
+  /* ABOUT SECTION */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .about-photo {
+    max-width: 240px !important;
+    margin: 0 auto !important;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .journey-timeline {
+    padding-left: 24px !important;
+  }
+
+  .phase-node {
+    left: -24px !important;
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .phase-card {
+    padding: 18px 14px !important;
+  }
+
+  .phase-title {
+    font-size: 18px !important;
+  }
+
+  /* MACOS BROWSER MOCKUP FRAMES IN PROJECTS */
+  .browser-mockup-header {
+    margin: -20px -16px 14px -16px !important;
+    padding: 8px 12px !important;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  }
+
+  .browser-address-bar {
+    max-width: 130px !important;
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+
+  .browser-live-beacon {
+    font-size: 10px !important;
+  }
+
+  .project-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .project-footer > div {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .btn-flip {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 7px 12px !important;
+  }
+
+  .project-filters {
+    gap: 6px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .filter-btn {
+    font-size: 12.5px !important;
+    padding: 6px 14px !important;
+  }
+
+  /* 3D ISOMETRIC STACKS */
+  .exp-iso-stack-wrap {
+    transform: none !important;
+    margin: 10px 0 !important;
+    padding: 0 !important;
+  }
+
+  .exp-iso-stack {
+    transform: scale(0.82) rotateX(46deg) rotateZ(-30deg) !important;
+  }
+
+  .btn-simulate-flow {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* CODOLIO & GITHUB CARDS */
+  .codolio-header, .github-stats-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .codolio-header .btn, .github-stats-header .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .codolio-stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .codolio-stat-box:last-child {
+    grid-column: span 2 !important;
+  }
+
+  .codolio-stat-num {
+    font-size: 24px !important;
+  }
+
+  .codolio-stat-box {
+    padding: 12px 10px !important;
+  }
+
+  /* DSA PROBLEM RINGS (3 COLUMNS COMPACT HORIZONTAL ON MOBILE) */
+  .dsa-progress-section {
+    padding: 16px 12px !important;
+    margin: 16px 0 !important;
+  }
+
+  .dsa-progress-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .dsa-progress-title {
+    font-size: 13.5px !important;
+  }
+
+  .dsa-rings-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .dsa-svg-wrap {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .ring-val {
+    font-size: 15px !important;
+  }
+
+  .ring-label {
+    font-size: 10.5px !important;
+  }
+
+  /* GITHUB HEATMAP (ENABLE HORIZONTAL TOUCH SCROLL) */
+  .github-heatmap-container {
+    padding: 14px 12px !important;
+    margin: 16px 0 !important;
+  }
+
+  .github-heatmap-grid {
+    min-width: 480px !important;
+  }
+
+  .codolio-badges-row {
+    gap: 6px !important;
+  }
+
+  .codolio-badge {
+    font-size: 11.5px !important;
+    padding: 4px 10px !important;
+  }
+
+  .codolio-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-card {
+    padding: 16px 14px !important;
+    gap: 12px !important;
+  }
+
+  .cert-badge-wrap {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    font-size: 10px !important;
+  }
+
+  .cert-name {
+    font-size: 14px !important;
+  }
+
+  .cert-meta {
+    font-size: 12px !important;
+  }
+
+  /* CONTACT SECTION */
+  .contact-card {
+    padding: 24px 16px !important;
+  }
+
+  .contact-links-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .contact-action-btn {
+    padding: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* HIDE FLOATING QUICK DOCK ON PHONES SO IT DOES NOT BLOCK READING */
+  .floating-quick-dock {
+    display: none !important;
+  }
+}
+
 </style>
 </head>
 <body>
