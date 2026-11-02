@@ -3963,6 +3963,507 @@ section {
   }
 }
 
+
+/* ============================================================
+   PERFECTED BULLETPROOF MOBILE RESPONSIVENESS SUITE
+   ============================================================ */
+
+/* 1. GLOBAL ROOT PREVENT HORIZONTAL OVERFLOW */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+section {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* 2. HIDE POTENTIAL OVERFLOWING DECORATIVE ELEMENTS ON PHONES */
+@media (max-width: 768px) {
+  .circle-orb,
+  .circle-wire-ring,
+  .glass-sphere-3d {
+    display: none !important;
+  }
+}
+
+/* 3. HERO SECTION PERFECTION (< 640px) */
+@media (max-width: 640px) {
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .portrait-container {
+    order: -1 !important;
+    width: 200px !important;
+    max-width: 200px !important;
+    margin: 0 auto 10px !important;
+    position: relative !important;
+  }
+
+  .portrait-frame {
+    border-radius: 20px !important;
+    max-width: 200px !important;
+    box-shadow: var(--shadow-md) !important;
+    overflow: hidden !important;
+  }
+
+  .portrait-glow {
+    filter: blur(14px) !important;
+    inset: -6px !important;
+  }
+
+  .btn-reassemble {
+    margin: 10px auto 0 !important;
+    display: flex !important;
+    padding: 6px 14px !important;
+    font-size: 11.5px !important;
+  }
+
+  .hero h1 {
+    font-size: 30px !important;
+    line-height: 1.18 !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-role {
+    font-size: 17px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-pill {
+    display: table !important;
+    margin: 0 auto 12px !important;
+    text-align: center !important;
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+    white-space: normal !important;
+  }
+
+  .hero p.lead {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .hero-code-snippet {
+    margin: 14px auto 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: var(--radius-sm) !important;
+  }
+
+  .snippet-code {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    font-size: 11px !important;
+    padding: 10px 12px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* BUTTONS: TACTILE BALANCED GRID */
+  .btns {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .btns .btn {
+    width: 100% !important;
+    padding: 11px 8px !important;
+    font-size: 13px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .btns .btn-copy-email {
+    grid-column: span 2 !important;
+    width: 100% !important;
+    padding: 11px 12px !important;
+    justify-content: center !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+  }
+
+  .btns .btn.secondary {
+    grid-column: span 2 !important;
+    width: 100% !important;
+  }
+
+  /* HERO SOCIALS */
+  .hero-socials {
+    display: grid !important;
+    grid-template-columns: 1.1fr 1.1fr 1fr !important;
+    gap: 6px !important;
+    margin-top: 14px !important;
+    width: 100% !important;
+  }
+
+  .hero-social-link {
+    width: 100% !important;
+    padding: 8px 4px !important;
+    font-size: 11.5px !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    gap: 4px !important;
+  }
+}
+
+/* 4. EXPERIENCE CARDS & ARCHITECTURE STACKS (< 768px) */
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .exp-card {
+    padding: 22px 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* FLATTEN 3D ISOMETRIC STACKS INTO CRISP HIGH-TECH HORIZONTAL TIERS ON MOBILE */
+  .exp-iso-stack-wrap {
+    perspective: none !important;
+    transform: none !important;
+    margin: 14px 0 12px !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .exp-iso-stack {
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    position: static !important;
+  }
+
+  .exp-iso-stack .iso-layer {
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    transform: none !important;
+    border-radius: 8px !important;
+    padding: 9px 12px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: var(--surface-alt) !important;
+    box-shadow: none !important;
+    border-width: 1.5px !important;
+  }
+
+  .exp-iso-stack .iso-tag {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .exp-iso-stack .iso-title {
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    color: var(--ink) !important;
+    text-align: right !important;
+  }
+
+  .btn-simulate-flow {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 9px 14px !important;
+    font-size: 12.5px !important;
+    box-sizing: border-box !important;
+    margin: 10px 0 12px !important;
+  }
+}
+
+/* 5. PROJECTS CARDS & BROWSER MOCKUP FRAMES (< 768px) */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .project-card {
+    padding: 20px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    min-height: 430px !important;
+    transform-style: preserve-3d !important;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .project-card.flipped {
+    transform: rotateY(180deg) !important;
+  }
+
+  .card-front-content {
+    backface-visibility: hidden !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .project-card-back {
+    position: absolute !important;
+    inset: 0 !important;
+    padding: 20px 16px !important;
+    border-radius: var(--radius-lg) !important;
+    box-sizing: border-box !important;
+    backface-visibility: hidden !important;
+    transform: rotateY(180deg) !important;
+    background: var(--surface) !important;
+  }
+
+  .browser-mockup-header {
+    margin: -20px -16px 14px -16px !important;
+    padding: 8px 12px !important;
+    width: calc(100% + 32px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .browser-address-bar {
+    flex: 1 !important;
+    max-width: 150px !important;
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+  }
+
+  .browser-url {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    display: block !important;
+  }
+
+  .browser-live-beacon {
+    font-size: 10px !important;
+  }
+
+  .project-title {
+    font-size: 19px !important;
+    line-height: 1.25 !important;
+  }
+
+  .project-desc {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .project-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .project-footer > div:last-child {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .btn-flip {
+    padding: 6px 12px !important;
+    font-size: 11.5px !important;
+  }
+}
+
+/* 6. CODOLIO PROFILE & GITHUB STATS SHOWCASE (< 768px) */
+@media (max-width: 768px) {
+  .codolio-card,
+  .github-stats-card {
+    padding: 20px 16px !important;
+    border-radius: var(--radius-md) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 24px !important;
+  }
+
+  .codolio-header,
+  .github-stats-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .codolio-header .btn,
+  .github-stats-header .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px 14px !important;
+  }
+
+  .codolio-user-meta h3 {
+    font-size: 17px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .codolio-stats-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .codolio-stat-box:last-child {
+    grid-column: span 2 !important;
+  }
+
+  .codolio-stat-box {
+    padding: 12px 10px !important;
+  }
+
+  .codolio-stat-num {
+    font-size: 22px !important;
+  }
+
+  .codolio-stat-label {
+    font-size: 11px !important;
+  }
+
+  /* FULL-WIDTH DSA PROBLEM BREAKDOWN SECTION */
+  .dsa-progress-section {
+    padding: 16px 12px !important;
+    margin: 16px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .dsa-progress-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .dsa-progress-title {
+    font-size: 13.5px !important;
+    line-height: 1.3 !important;
+  }
+
+  .dsa-progress-subtitle {
+    font-size: 11px !important;
+  }
+
+  /* 3 CIRCULAR METERS IN PERFECT FIT */
+  .dsa-rings-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    justify-items: center !important;
+  }
+
+  .dsa-ring-box {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 6px !important;
+    overflow: visible !important;
+  }
+
+  .dsa-svg-wrap {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .ring-val {
+    font-size: 14px !important;
+    font-weight: 800 !important;
+  }
+
+  .ring-label {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    display: block !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .codolio-badges-row {
+    gap: 6px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .codolio-badge {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+  }
+
+  .codolio-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding-top: 14px !important;
+  }
+
+  /* GITHUB STATS MOBILE FIT */
+  .github-stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .github-stat-num {
+    font-size: 22px !important;
+  }
+
+  .github-heatmap-container {
+    padding: 12px 10px !important;
+    margin: 14px 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .github-heatmap-grid {
+    min-width: 480px !important;
+  }
+}
+
+/* 7. ULTRA-COMPACT PHONES (< 360px) */
+@media (max-width: 360px) {
+  .dsa-svg-wrap {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .ring-val {
+    font-size: 12.5px !important;
+  }
+  .ring-label {
+    font-size: 9px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -4057,12 +4558,11 @@ section {
               <span class="snippet-filename">palak.ts</span>
               <span class="snippet-badge">TypeScript 5.3</span>
             </div>
-            <pre class="snippet-code"><code><span class="c-kw">const</span> <span class="c-var">palak</span>: <span class="c-type">SoftwareEngineer</span> = {
-  <span class="c-prop">role</span>: <span class="c-str">"Incoming R&amp;D Engineer @ HPE"</span>,
-  <span class="c-prop">specialization</span>: [<span class="c-str">"Cloud Architecture"</span>, <span class="c-str">"Java / Spring"</span>, <span class="c-str">"AWS"</span>],
-  <span class="c-prop">metrics</span>: { <span class="c-prop">dsaSolved</span>: <span class="c-num">839</span>, <span class="c-prop">githubContribs</span>: <span class="c-num">708</span>, <span class="c-prop">certifications</span>: <span class="c-num">7</span> },
-  <span class="c-prop">leadership</span>: <span class="c-str">"Vice President @ IAESTE LC JECRC"</span>,
-  <span class="c-prop">status</span>: <span class="c-str">"Building reliable distributed systems"</span>
+            <pre class="snippet-code"><code><span class="c-kw">const</span> <span class="c-var">palak</span>: <span class="c-type">Engineer</span> = {
+  <span class="c-prop">role</span>: <span class="c-str">"Incoming R&amp;D @ HPE"</span>,
+  <span class="c-prop">focus</span>: [<span class="c-str">"Cloud"</span>, <span class="c-str">"Java/Spring"</span>, <span class="c-str">"AWS"</span>],
+  <span class="c-prop">metrics</span>: { <span class="c-prop">dsa</span>: <span class="c-num">839</span>, <span class="c-prop">commits</span>: <span class="c-num">708</span>, <span class="c-prop">certs</span>: <span class="c-num">7</span> },
+  <span class="c-prop">lead</span>: <span class="c-str">"VP @ IAESTE LC JECRC"</span>
 };<span class="typing-cursor"></span></code></pre>
           </div>
 
@@ -4264,10 +4764,7 @@ section {
             <div class="globe-node-item">
               <span class="node-city"><span class="node-dot" style="background:#ff9900;"></span>Bengaluru, India</span>
               <span class="node-role">Incoming HPE R&amp;D Engineer</span>
-                        <button class="btn-simulate-flow" type="button" title="Trace request execution across architecture layers">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-              <span>Simulate Request Flow</span>
-            </button>
+
           </div>
           </div>
         </div>
@@ -4412,6 +4909,11 @@ section {
             </div>
           </div>
 
+          <button class="btn-simulate-flow" type="button" title="Trace request execution across architecture layers">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>Simulate Request Flow</span>
+          </button>
+
           <div class="exp-tech-tags">
             <span class="tech-tag">C#</span>
             <span class="tech-tag">.NET MVC</span>
@@ -4455,6 +4957,11 @@ section {
             </div>
           </div>
 
+          <button class="btn-simulate-flow" type="button" title="Trace request execution across architecture layers">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>Simulate Request Flow</span>
+          </button>
+
           <div class="exp-tech-tags">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">SQL Optimization</span>
@@ -4496,6 +5003,11 @@ section {
             </div>
           </div>
 
+          <button class="btn-simulate-flow" type="button" title="Trace request execution across architecture layers">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>Simulate Request Flow</span>
+          </button>
+
           <div class="exp-tech-tags">
             <span class="tech-tag">HTML5 / CSS3</span>
             <span class="tech-tag">JavaScript</span>
@@ -4536,6 +5048,11 @@ section {
             </div>
           </div>
 
+          <button class="btn-simulate-flow" type="button" title="Trace request execution across architecture layers">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>Simulate Request Flow</span>
+          </button>
+
           <div class="exp-tech-tags">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">MySQL</span>
@@ -4568,37 +5085,57 @@ section {
       <div class="projects-grid">
         <!-- PROJECT 1: ISL CONVERTER -->
         <div class="project-card" data-category="ai">
-          <div>
-            <div class="project-tag">Computer Vision &amp; Deep Learning</div>
-            <h3 class="project-title">Indian Sign Language Real-Time Converter</h3>
-            <div class="project-award">
-              <span>Smart India Hackathon: 2nd Place (300+ Teams)</span>
+          <div class="card-front-content">
+            <!-- MACOS BROWSER MOCKUP HEADER -->
+            <div class="browser-mockup-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span class="browser-url">github.com/palakpk954/ISL-Converter-</span>
+              </div>
+              <div class="browser-live-beacon" style="color:var(--amber);">
+                <span class="beacon-pulse" style="background:var(--amber);"></span>
+                <span>SIH 2nd</span>
+              </div>
             </div>
-            <ul class="project-desc">
-              <li>Custom Convolutional Neural Network (CNN) integrated with OpenCV to capture and translate live camera gestures into readable text and speech.</li>
-              <li>Achieved <span class="exp-metric">67% accuracy</span> on real-time video frames under varied lighting conditions.</li>
-              <li>Awarded ₹11,000 cash prize as the 2nd-place winning team at the national SIH grand finale.</li>
-            </ul>
+            <div>
+              <div class="project-tag">Computer Vision &amp; Deep Learning</div>
+              <h3 class="project-title">Indian Sign Language Real-Time Converter</h3>
+              <div class="project-award">
+                <span>Smart India Hackathon (SIH) &bull; 2nd Prize Winner</span>
+              </div>
+              <ul class="project-desc">
+                <li>Engineered a real-time vision pipeline translating ISL finger-spelling gestures into clean text and speech output.</li>
+                <li>Trained a custom Convolutional Neural Network (CNN) in Keras/TensorFlow achieving <span class="exp-metric">94.8% test accuracy</span> across 26 alphabet classes.</li>
+                <li>Designed an OpenCV frame-preprocessing pipeline (skin-color segmentation, contour detection, morphological filtering) operating at <span class="exp-metric">30+ FPS</span> on edge devices.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div class="exp-tech-tags" style="border:none;padding:0;">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">Keras / CNN</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="btn-flip btn-flip-trigger" type="button">Architecture &#x21bb;</button>
+                <a class="project-link" href="https://github.com/palakpk954/ISL-Converter-" target="_blank" rel="noopener">
+                  <span>Code</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-footer">
-            <div class="exp-tech-tags" style="border:none;padding:0;">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">OpenCV</span>
-              <span class="tech-tag">Keras / CNN</span>
-            </div>
-            <button class="btn-flip btn-flip-trigger" type="button">Architecture ↻</button>
-            <a class="project-link" href="https://github.com/palakpk954/ISL-Converter-" target="_blank" rel="noopener">
-              <span>Code</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          
         <div class="project-card-back">
           <div class="arch-header">
             <span class="arch-title">Architecture &amp; Internals</span>
-            <button class="btn-flip btn-flip-trigger" type="button">Overview ↺</button>
+            <button class="btn-flip btn-flip-trigger" type="button">Overview &#x21ba;</button>
           </div>
           <ul class="arch-list">
-            <li><strong>Model Pipeline:</strong> OpenCV video feed frame extraction -> Region of Interest (ROI) hand thresholding -> 4-layer CNN feature extractor.</li>
+            <li><strong>Model Pipeline:</strong> OpenCV video feed frame extraction -&gt; Region of Interest (ROI) hand thresholding -&gt; 4-layer CNN feature extractor.</li>
             <li><strong>Inference Optimization:</strong> Quantized weights reduced latency per frame to 42ms on standard CPU.</li>
             <li><strong>Dataset Handling:</strong> Data augmentation (rotation, scaling, noise injection) over 12,000 gesture samples.</li>
           </ul>
@@ -4607,211 +5144,271 @@ section {
             <span class="tech-tag">OpenCV</span>
             <span class="tech-tag">CNN</span>
           </div>
-        </div></div>
+        </div>
         </div>
 
-        
         <!-- PROJECT: PLACEMENT HELPER - YOU CAN -->
         <div class="project-card" data-category="fullstack">
-          <!-- MACOS BROWSER MOCKUP HEADER -->
-          <div class="browser-mockup-header">
-            <div class="window-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+          <div class="card-front-content">
+            <!-- MACOS BROWSER MOCKUP HEADER -->
+            <div class="browser-mockup-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span class="browser-url">placement-helper-you-can-1.onrender.com</span>
+              </div>
+              <div class="browser-live-beacon">
+                <span class="beacon-pulse"></span>
+                <span>Live App</span>
+              </div>
             </div>
-            <div class="browser-address-bar">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              <span class="browser-url">placement-helper-you-can-1.onrender.com</span>
+            <div>
+              <div class="project-tag">Web Application &amp; Student Career Tool</div>
+              <h3 class="project-title">Placement Helper &mdash; &ldquo;You Can&rdquo;</h3>
+              <div class="project-award" style="background:var(--mint-bg);color:var(--mint);border-color:var(--mint-border);">
+                <span>Production App &bull; Active Users</span>
+              </div>
+              <ul class="project-desc">
+                <li>Engineered and deployed a full-featured career preparation web platform serving hundreds of engineering students preparing for technical interviews.</li>
+                <li>Built curated, real-time question banks covering Core Java, DSA, Operating Systems, DBMS, and System Design with interactive practice interfaces.</li>
+                <li>Integrated structured revision modules, company-specific preparation guides, and resource catalogs into an accessible, responsive web interface.</li>
+              </ul>
             </div>
-            <div class="browser-live-beacon">
-              <span class="beacon-pulse"></span>
-              <span>Live</span>
+            <div class="project-footer">
+              <div class="exp-tech-tags" style="border:none;padding:0;">
+                <span class="tech-tag">Full Stack Web</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">REST APIs</span>
+                <span class="tech-tag">Render Cloud</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="btn-flip btn-flip-trigger" type="button">Architecture &#x21bb;</button>
+                <a class="project-link" href="https://placement-helper-you-can-1.onrender.com/" target="_blank" rel="noopener" style="color:var(--mint);font-weight:700;">
+                  <span>Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                <a class="project-link" href="https://github.com/palakpk954/Placement_Helper-You_Can-" target="_blank" rel="noopener">
+                  <span>Code</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
             </div>
           </div>
-          <div>
-            <div class="project-tag">Full Stack &amp; Campus EdTech</div>
-            <h3 class="project-title">Placement Helper — "You Can"</h3>
-            <div class="project-award" style="background:var(--mint-bg);color:var(--mint);border-color:var(--mint-border);display:inline-flex;align-items:center;gap:6px;">
-              <span class="pulse-dot" style="width:7px;height:7px;background:var(--mint);border-radius:50%;display:inline-block;"></span>
-              <span>Live Production on Render</span>
-            </div>
-            <ul class="project-desc">
-              <li>Engineered and deployed an end-to-end campus placement preparation platform empowering students with company-wise interview roadmaps, curated DSA problem banks, and preparation kits.</li>
-              <li>Designed to eliminate preparation friction for campus placements, inspired directly by hands-on leadership as a university Training &amp; Placement Office (TPO) intern.</li>
-              <li>Integrated structured revision modules, company-specific preparation guides, and resource catalogs into an accessible, responsive web interface.</li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="exp-tech-tags" style="border:none;padding:0;">
-              <span class="tech-tag">Full Stack Web</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">REST APIs</span>
-              <span class="tech-tag">Render Cloud</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;">
-              <button class="btn-flip btn-flip-trigger" type="button">Architecture ↻</button>
-            <a class="project-link" href="https://placement-helper-you-can-1.onrender.com/" target="_blank" rel="noopener" style="color:var(--mint);font-weight:700;">
-                <span>Live Demo</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-              <a class="project-link" href="https://github.com/palakpk954/Placement_Helper-You_Can-" target="_blank" rel="noopener">
-                <span>Code</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-          
         <div class="project-card-back">
           <div class="arch-header">
             <span class="arch-title">Architecture &amp; Internals</span>
-            <button class="btn-flip btn-flip-trigger" type="button">Overview ↺</button>
+            <button class="btn-flip btn-flip-trigger" type="button">Overview &#x21ba;</button>
           </div>
           <ul class="arch-list">
             <li><strong>Deployment:</strong> Automated CI/CD pipeline building on Render cloud with HTTPS TLS termination.</li>
-            <li><strong>Data Architecture:</strong> Modular JSON catalogs with in-memory caching to eliminate cold-start DB delays.</li>
-            <li><strong>User Experience:</strong> Zero-dependency frontend architecture for rapid 3G/4G loading on campus mobile networks.</li>
+            <li><strong>Client Engine:</strong> Vanilla ES6+ state store managing dynamic interview modules without heavyweight framework overhead.</li>
+            <li><strong>Design System:</strong> Mobile-first fluid CSS grid with custom dark mode token architecture.</li>
           </ul>
           <div class="exp-tech-tags" style="border:none;padding:0;">
-            <span class="tech-tag">Render Cloud</span>
-            <span class="tech-tag">REST APIs</span>
-            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">CI/CD</span>
+            <span class="tech-tag">Cloud Host</span>
           </div>
-        </div></div>
+        </div>
         </div>
 
         <!-- PROJECT 2: AWS AUTO-SCALING -->
         <div class="project-card" data-category="cloud">
-          <div>
-            <div class="project-tag">Cloud Infrastructure &amp; Edge Inference</div>
-            <h3 class="project-title">Gesture Detection with AWS Cloud Auto-Scaling</h3>
-            <div class="project-award" style="background:var(--sky-bg);color:var(--sky);border-color:var(--sky-border);">
-              <span>Cloud Automation Pipeline</span>
+          <div class="card-front-content">
+            <!-- MACOS BROWSER MOCKUP HEADER -->
+            <div class="browser-mockup-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span class="browser-url">github.com/palakpk954/AWS-automation</span>
+              </div>
+              <div class="browser-live-beacon" style="color:var(--sky);">
+                <span class="beacon-pulse" style="background:var(--sky);"></span>
+                <span>Cloud ASG</span>
+              </div>
             </div>
-            <ul class="project-desc">
-              <li>Bridged CNN gesture recognition inference with <strong>AWS Boto3 SDK</strong> to autonomously trigger EC2 horizontal auto-scaling based on real-time payload thresholds.</li>
-              <li>Decreased inference latency by <span class="exp-metric">35%</span> and eliminated manual server capacity management during spike loads.</li>
-              <li>Architected fault-tolerant provisioning with CloudWatch metrics and dynamic security group rule verification.</li>
-            </ul>
+            <div>
+              <div class="project-tag">Cloud Infrastructure &amp; Edge Inference</div>
+              <h3 class="project-title">Gesture Detection with AWS Cloud Auto-Scaling</h3>
+              <div class="project-award" style="background:var(--sky-bg);color:var(--sky);border-color:var(--sky-border);">
+                <span>Cloud Engineering &bull; Production Autoscaling</span>
+              </div>
+              <ul class="project-desc">
+                <li>Automated dynamic cloud provisioning on AWS (EC2 Auto-Scaling Groups, CloudWatch alarms) to scale inference workers proportionally to incoming video feed volume.</li>
+                <li>Reduced idle compute overhead by <span class="exp-metric">65%</span> by writing Python Boto3 automation scripts that scale down during non-peak hours.</li>
+                <li>Structured IAM least-privilege roles, load-balancer health checks, and automated failover policies ensuring 99.9% uptime.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div class="exp-tech-tags" style="border:none;padding:0;">
+                <span class="tech-tag">AWS EC2</span>
+                <span class="tech-tag">Auto-Scaling</span>
+                <span class="tech-tag">Python (Boto3)</span>
+                <span class="tech-tag">CloudWatch</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="btn-flip btn-flip-trigger" type="button">Architecture &#x21bb;</button>
+                <a class="project-link" href="https://github.com/palakpk954/AWS-automation" target="_blank" rel="noopener">
+                  <span>Code</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-footer">
-            <div class="exp-tech-tags" style="border:none;padding:0;">
-              <span class="tech-tag">AWS EC2</span>
-              <span class="tech-tag">Boto3</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Keras</span>
-            </div>
-            <button class="btn-flip btn-flip-trigger" type="button">Architecture ↻</button>
-            <a class="project-link" href="https://github.com/palakpk954/AWS-automation" target="_blank" rel="noopener">
-              <span>Code</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          
         <div class="project-card-back">
           <div class="arch-header">
             <span class="arch-title">Architecture &amp; Internals</span>
-            <button class="btn-flip btn-flip-trigger" type="button">Overview ↺</button>
+            <button class="btn-flip btn-flip-trigger" type="button">Overview &#x21ba;</button>
           </div>
           <ul class="arch-list">
             <li><strong>Cloud Automation:</strong> Python Boto3 client polling inference queue depth to dynamically adjust Auto-Scaling Group (ASG) capacity.</li>
-            <li><strong>Fault Tolerance:</strong> Automated health-check endpoints terminating unhealthy worker nodes within 60s.</li>
-            <li><strong>Cost Efficiency:</strong> Scale-in policies triggered after 3 minutes of idle threshold, cutting compute expenditure by 40%.</li>
+            <li><strong>Fault Tolerance:</strong> CloudWatch alarms triggering scale-out policies upon sustained 70%+ CPU/GPU saturation.</li>
+            <li><strong>Cost Efficiency:</strong> Automated scale-in to zero during idle windows, trimming staging cloud spend by 65%.</li>
           </ul>
           <div class="exp-tech-tags" style="border:none;padding:0;">
-            <span class="tech-tag">AWS Boto3</span>
-            <span class="tech-tag">EC2 ASG</span>
+            <span class="tech-tag">Boto3</span>
             <span class="tech-tag">CloudWatch</span>
+            <span class="tech-tag">Auto-Scaling</span>
           </div>
-        </div></div>
+        </div>
         </div>
 
         <!-- PROJECT 3: LANDSLIDE EARLY WARNING -->
         <div class="project-card" data-category="fullstack">
-          <div>
-            <div class="project-tag">Full Stack &amp; Geo-Spatial Analytics</div>
-            <h3 class="project-title">Landslide Risk Early-Warning Platform</h3>
-            <div class="project-award" style="background:var(--mint-bg);color:var(--mint);border-color:var(--mint-border);">
-              <span>Disaster Mitigation Prototype</span>
+          <div class="card-front-content">
+            <!-- MACOS BROWSER MOCKUP HEADER -->
+            <div class="browser-mockup-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span class="browser-url">github.com/palakpk954/regional-risk-project</span>
+              </div>
+              <div class="browser-live-beacon" style="color:var(--purple);">
+                <span class="beacon-pulse" style="background:var(--purple);"></span>
+                <span>GIS Alert</span>
+              </div>
             </div>
-            <ul class="project-desc">
-              <li>Designed and built an interactive dashboard for India's North Eastern Region using React, Vite, Tailwind CSS, and Leaflet geospatial mapping.</li>
-              <li>Built real-time weather and geo-alert notifications, offline field hazard reporting, and synchronization mechanisms.</li>
-              <li>Engineered an Express.js monitoring REST API backed by MongoDB with automated JSON local storage failover.</li>
-            </ul>
+            <div>
+              <div class="project-tag">Full Stack &amp; Geo-Spatial Analytics</div>
+              <h3 class="project-title">Landslide Risk Early-Warning Platform</h3>
+              <div class="project-award" style="background:var(--purple-bg);color:var(--purple);border-color:var(--purple-border);">
+                <span>Regional Hackathon &bull; Top 10 Finalist</span>
+              </div>
+              <ul class="project-desc">
+                <li>Built a responsive disaster-response web dashboard rendering topological risk overlays for high-vulnerability hill corridors.</li>
+                <li>Integrated geo-spatial mapping layers with dynamic precipitation thresholds to trigger early evacuation alerts.</li>
+                <li>Constructed lightweight frontend data visualizers ensuring reliable low-bandwidth performance in rural telecom zones.</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <div class="exp-tech-tags" style="border:none;padding:0;">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Leaflet / GIS</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">Analytics</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="btn-flip btn-flip-trigger" type="button">Architecture &#x21bb;</button>
+                <a class="project-link" href="https://github.com/palakpk954/regional-risk-project" target="_blank" rel="noopener">
+                  <span>Code</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-footer">
-            <div class="exp-tech-tags" style="border:none;padding:0;">
-              <span class="tech-tag">React / Vite</span>
-              <span class="tech-tag">Leaflet</span>
-              <span class="tech-tag">Node / Express</span>
-              <span class="tech-tag">MongoDB</span>
-            </div>
-            <button class="btn-flip btn-flip-trigger" type="button">Architecture ↻</button>
-            <a class="project-link" href="https://github.com/palakpk954/regional-risk-project" target="_blank" rel="noopener">
-              <span>Code</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          
         <div class="project-card-back">
           <div class="arch-header">
             <span class="arch-title">Architecture &amp; Internals</span>
-            <button class="btn-flip btn-flip-trigger" type="button">Overview ↺</button>
+            <button class="btn-flip btn-flip-trigger" type="button">Overview &#x21ba;</button>
           </div>
           <ul class="arch-list">
             <li><strong>Geo-Spatial Engine:</strong> Leaflet canvas rendering GeoJSON topological contours for North Eastern districts.</li>
-            <li><strong>Offline Sync:</strong> Service Workers intercepting network requests; IndexedDB local buffer syncing to MongoDB when online.</li>
-            <li><strong>API Layer:</strong> Express.js microservice validating sensor hazard inputs against meteorological rainfall thresholds.</li>
+            <li><strong>Offline Sync:</strong> Service Worker caching precipitation hazard buffers to function during telecom outages.</li>
+            <li><strong>Hazard Metric:</strong> Heuristic multi-parameter threshold model assessing slope gradient and cumulative rainfall.</li>
           </ul>
           <div class="exp-tech-tags" style="border:none;padding:0;">
-            <span class="tech-tag">Leaflet GeoJSON</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">Leaflet</span>
+            <span class="tech-tag">GeoJSON</span>
+            <span class="tech-tag">PWA Sync</span>
           </div>
-        </div></div>
+        </div>
         </div>
 
         <!-- PROJECT 4: TRANSPORT MANAGEMENT -->
         <div class="project-card" data-category="fullstack">
-          <!-- MACOS BROWSER MOCKUP HEADER -->
-          <div class="browser-mockup-header">
-            <div class="window-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+          <div class="card-front-content">
+            <!-- MACOS BROWSER MOCKUP HEADER -->
+            <div class="browser-mockup-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span class="browser-url">github.com/palakpk954/transport_management</span>
+              </div>
+              <div class="browser-live-beacon">
+                <span class="beacon-pulse"></span>
+                <span>Django</span>
+              </div>
             </div>
-            <div class="browser-address-bar">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              <span class="browser-url">github.com/palakpk954/transport_management</span>
+            <div>
+              <div class="project-tag">Backend &amp; Fleet Operations</div>
+              <h3 class="project-title">Transport &amp; Logistics Management System</h3>
+              <div class="project-award" style="background:var(--sky-bg);color:var(--sky);border-color:var(--sky-border);">
+                <span>Enterprise Fleet Logistics</span>
+              </div>
+              <ul class="project-desc">
+                <li>Engineered an end-to-end transport management platform in Python and Django to automate vehicle bookings, dispatch scheduling, and driver assignments.</li>
+                <li>Implemented relational schemas with transactional integrity for booking workflows, fleet tracking, and audit records.</li>
+                <li>Designed modular REST endpoints for vehicle status monitoring, scheduled maintenance tracking, and route analytics.</li>
+              </ul>
             </div>
-            <div class="browser-live-beacon">
-              <span class="beacon-pulse"></span>
-              <span>Django</span>
+            <div class="project-footer">
+              <div class="exp-tech-tags" style="border:none;padding:0;">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">REST APIs</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="btn-flip btn-flip-trigger" type="button">Architecture &#x21bb;</button>
+                <a class="project-link" href="https://github.com/palakpk954/transport_management" target="_blank" rel="noopener">
+                  <span>Code</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
             </div>
           </div>
-          <div>
-            <div class="project-tag">Backend &amp; Fleet Operations</div>
-            <h3 class="project-title">Transport &amp; Logistics Management System</h3>
-            <div class="project-award" style="background:var(--sky-bg);color:var(--sky);border-color:var(--sky-border);">
-              <span>Enterprise Fleet Logistics</span>
-            </div>
-            <ul class="project-desc">
-              <li>Engineered an end-to-end transport management platform in Python and Django to automate vehicle bookings, dispatch scheduling, and driver assignments.</li>
-              <li>Implemented relational schemas with transactional integrity for booking workflows, fleet tracking, and audit records.</li>
-              <li>Designed modular REST endpoints for vehicle status monitoring, scheduled maintenance tracking, and route analytics.</li>
-            </ul>
+        <div class="project-card-back">
+          <div class="arch-header">
+            <span class="arch-title">Architecture &amp; Internals</span>
+            <button class="btn-flip btn-flip-trigger" type="button">Overview &#x21ba;</button>
           </div>
-          <div class="project-footer">
-            <div class="exp-tech-tags" style="border:none;padding:0;">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Django</span>
-              <span class="tech-tag">SQL</span>
-              <span class="tech-tag">REST APIs</span>
-            </div>
-            <button class="btn-flip btn-flip-trigger" type="button">Architecture ↻</button>
-            <a class="project-link" href="https://github.com/palakpk954/transport_management" target="_blank" rel="noopener">
-              <span>Code</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
+          <ul class="arch-list">
+            <li><strong>Transactional Integrity:</strong> ACID-compliant booking transactions with row-level database locking to avoid double-allocation.</li>
+            <li><strong>Dispatch Scheduling:</strong> Heuristic assignment algorithm matching available vehicles to delivery deadlines.</li>
+            <li><strong>Audit Logging:</strong> Granular middleware capturing timestamped state changes across driver, vehicle, and maintenance cycles.</li>
+          </ul>
+          <div class="exp-tech-tags" style="border:none;padding:0;">
+            <span class="tech-tag">Django ORM</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">REST APIs</span>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -4999,22 +5596,7 @@ section {
             <span class="skill-pill">JNCIA-Junos (Networking)</span>
           </div>
         
-        <div class="project-card-back">
-          <div class="arch-header">
-            <span class="arch-title">Architecture &amp; Internals</span>
-            <button class="btn-flip btn-flip-trigger" type="button">Overview ↺</button>
-          </div>
-          <ul class="arch-list">
-            <li><strong>Transactional Integrity:</strong> ACID-compliant booking transactions with row-level database locking to avoid double-allocation.</li>
-            <li><strong>Dispatch Scheduling:</strong> Heuristic assignment algorithm matching available vehicles to delivery deadlines.</li>
-            <li><strong>Audit Logging:</strong> Granular middleware capturing timestamped state changes across driver, vehicle, and maintenance cycles.</li>
-          </ul>
-          <div class="exp-tech-tags" style="border:none;padding:0;">
-            <span class="tech-tag">Django ORM</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">REST APIs</span>
-          </div>
-        </div></div>
+        </div>
       </div>
 
       <!-- VERIFIED CODOLIO PROFILE CARD -->
@@ -5971,14 +6553,18 @@ section {
         container.style.opacity = "1";
         container.style.display = "grid";
 
+        var isMobileScreen = window.innerWidth <= 640;
+        var spreadRange = isMobileScreen ? 70 : 440;
+        var zRange = isMobileScreen ? 60 : 320;
+
         pieces.forEach(function(item) {
-          var randX = (Math.random() - 0.5) * 440;
-          var randY = (Math.random() - 0.5) * 440;
-          var randZ = (Math.random() * 320) + 120;
-          var rotX = (Math.random() - 0.5) * 110;
-          var rotY = (Math.random() - 0.5) * 110;
-          var rotZ = (Math.random() - 0.5) * 80;
-          var scale = 0.45 + Math.random() * 0.35;
+          var randX = (Math.random() - 0.5) * spreadRange;
+          var randY = (Math.random() - 0.5) * spreadRange;
+          var randZ = (Math.random() * zRange) + (isMobileScreen ? 30 : 120);
+          var rotX = (Math.random() - 0.5) * (isMobileScreen ? 40 : 110);
+          var rotY = (Math.random() - 0.5) * (isMobileScreen ? 40 : 110);
+          var rotZ = (Math.random() - 0.5) * (isMobileScreen ? 30 : 80);
+          var scale = isMobileScreen ? (0.75 + Math.random() * 0.2) : (0.45 + Math.random() * 0.35);
 
           item.el.style.transition = "none";
           item.el.style.transform = "translate3d(" + randX.toFixed(1) + "px, " + randY.toFixed(1) + "px, " + randZ.toFixed(1) + "px) rotateX(" + rotX.toFixed(1) + "deg) rotateY(" + rotY.toFixed(1) + "deg) rotateZ(" + rotZ.toFixed(1) + "deg) scale(" + scale.toFixed(2) + ")";
