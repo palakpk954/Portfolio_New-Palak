@@ -4468,6 +4468,11 @@ section {
 /* ============================================================
    CINEMATIC GENERATED AMBIENT VIDEO BACKGROUND
    ============================================================ */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
 .hero-bg-video-container {
   position: absolute;
   inset: 0;
@@ -4475,8 +4480,8 @@ section {
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+  z-index: 1;
+  transition: opacity 0.5s ease;
 }
 
 .hero-bg-video-container.video-disabled {
@@ -4484,70 +4489,34 @@ section {
   visibility: hidden !important;
 }
 
-.hero-bg-video-element {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  opacity: 0.18;
-  filter: saturate(1.4) brightness(0.85) contrast(1.15);
-  mix-blend-mode: screen;
-}
-
-:root[data-theme="light"] .hero-bg-video-element {
-  opacity: 0.08;
-  filter: saturate(1.2) brightness(1.1) contrast(1.05);
-  mix-blend-mode: multiply;
-}
-
-#generative-video-canvas {
+#hero-video-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.72;
-  mix-blend-mode: screen;
+  display: block;
 }
 
-:root[data-theme="light"] #generative-video-canvas {
-  opacity: 0.38;
-  mix-blend-mode: multiply;
-}
-
-/* ATMOSPHERIC RADIAL VIGNETTE & SCANLINE GRID */
 .hero-video-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 38%, rgba(10, 15, 30, 0.15) 0%, var(--bg) 82%);
+  background: radial-gradient(ellipse at 50% 50%, transparent 45%, var(--bg) 98%);
   pointer-events: none;
+  opacity: 0.55;
 }
 
-:root[data-theme="light"] .hero-video-vignette {
-  background: radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.35) 0%, var(--bg) 84%);
-}
-
-.hero-video-grid-overlay {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 38px 38px;
-  pointer-events: none;
-  opacity: 0.7;
+.hero .wrap {
+  position: relative;
+  z-index: 5;
 }
 
 /* INTERACTIVE VIDEO CONTROLLER PILL */
 .hero-video-control-pill {
   position: absolute;
-  top: 22px;
+  top: 20px;
   right: 24px;
-  z-index: 10;
+  z-index: 12;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -4563,7 +4532,7 @@ section {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
   user-select: none;
 }
 
@@ -4575,11 +4544,11 @@ section {
 }
 
 .video-indicator-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--mint);
-  box-shadow: 0 0 8px var(--mint);
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
   transition: all 0.3s ease;
   animation: pulse-dot 2s infinite;
 }
@@ -4607,10 +4576,9 @@ section {
     top: 10px;
     right: 12px;
     padding: 4px 10px;
-    font-size: 10.5px;
+    font-size: 10px;
   }
 }
-
 </style>
 </head>
 <body>
@@ -4672,29 +4640,21 @@ section {
 <main>
   <!-- HERO -->
   <section class="hero" id="hero">
-    <!-- AMBIENT GENERATED VIDEO BACKGROUND LAYER -->
+    <!-- AMBIENT GENERATED VIDEO BACKGROUND ENGINE -->
     <div class="hero-bg-video-container" id="hero-bg-video-container">
-      <video class="hero-bg-video-element" id="hero-bg-video" autoplay loop muted playsinline preload="auto">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-with-code-31913-large.mp4" type="video/mp4">
-      </video>
-      <canvas id="generative-video-canvas"></canvas>
+      <canvas id="hero-video-canvas"></canvas>
       <div class="hero-video-vignette"></div>
-      <div class="hero-video-grid-overlay"></div>
     </div>
 
     <!-- INTERACTIVE VIDEO CONTROLLER PILL -->
-    <div class="hero-video-control-pill" id="video-control-pill" title="Toggle Background Video">
+    <div class="hero-video-control-pill" id="video-control-pill" title="Toggle Background Video Animation">
       <span class="video-indicator-dot"></span>
       <span class="video-control-text">Video BG: Active</span>
-      <button class="btn-toggle-video" type="button" aria-label="Toggle Background Video">
+      <button class="btn-toggle-video" type="button" aria-label="Toggle Background Video Animation">
         <svg class="icon-pause" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
         <svg class="icon-play" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       </button>
     </div>
-    <canvas id="hero-3d-canvas"></canvas>
-    <div class="circle-orb circle-orb-indigo" style="width:360px;height:360px;top:-80px;left:-60px;"></div>
-    <div class="circle-wire-ring" style="width:520px;height:520px;top:-60px;right:-100px;"></div>
-    <div class="circle-wire-ring reverse" style="width:380px;height:380px;top:20px;right:-30px;"></div>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-content">
@@ -6349,85 +6309,7 @@ section {
     // ============================================================
     // 1. HERO 3D INTERACTIVE SINE-WAVE GRID (CANVAS)
     // ============================================================
-    (function initHero3DWave() {
-      var canvas = document.getElementById("hero-3d-canvas");
-      if (!canvas) return;
-      var ctx = canvas.getContext("2d");
-      var w, h;
-      var mouseX = 0, mouseY = 0;
-      var time = 0;
-
-      function resize() {
-        w = canvas.width = canvas.parentElement.offsetWidth;
-        h = canvas.height = canvas.parentElement.offsetHeight;
-      }
-      resize();
-      window.addEventListener("resize", resize, { passive: true });
-
-      window.addEventListener("mousemove", function(e) {
-        var rect = canvas.getBoundingClientRect();
-        mouseX = e.clientX - rect.left;
-        mouseY = e.clientY - rect.top;
-      }, { passive: true });
-
-      var cols = 28, rows = 14;
-      function render() {
-        ctx.clearRect(0, 0, w, h);
-        time += 0.022;
-
-        var isDark = document.documentElement.dataset.theme === "dark";
-        var pointColor = isDark ? "rgba(99, 102, 241, 0.45)" : "rgba(79, 70, 229, 0.28)";
-        var lineColor = isDark ? "rgba(99, 102, 241, 0.12)" : "rgba(79, 70, 229, 0.08)";
-
-        var spacingX = w / (cols - 1);
-        var spacingY = h / (rows - 1);
-
-        var grid = [];
-        for (var r = 0; r < rows; r++) {
-          grid[r] = [];
-          for (var c = 0; c < cols; c++) {
-            var baseX = c * spacingX;
-            var baseY = r * spacingY;
-
-            // 3D undulating wave
-            var wave = Math.sin(c * 0.28 + time) * Math.cos(r * 0.35 + time * 0.8) * 22;
-
-            // Cursor reaction
-            var dist = Math.hypot(baseX - mouseX, baseY - mouseY);
-            var push = Math.max(0, 60 - dist * 0.3);
-
-            var finalX = baseX;
-            var finalY = baseY + wave - push;
-            grid[r][c] = { x: finalX, y: finalY };
-          }
-        }
-
-        // Draw connections
-        ctx.strokeStyle = lineColor;
-        ctx.lineWidth = 1;
-        for (var r = 0; r < rows; r++) {
-          ctx.beginPath();
-          for (var c = 0; c < cols; c++) {
-            if (c === 0) ctx.moveTo(grid[r][c].x, grid[r][c].y);
-            else ctx.lineTo(grid[r][c].x, grid[r][c].y);
-          }
-          ctx.stroke();
-        }
-
-        // Draw points
-        ctx.fillStyle = pointColor;
-        for (var r = 0; r < rows; r++) {
-          for (var c = 0; c < cols; c++) {
-            ctx.beginPath();
-            ctx.arc(grid[r][c].x, grid[r][c].y, 1.8, 0, Math.PI * 2);
-            ctx.fill();
-          }
-        }
-
-        requestAnimationFrame(render);
-      }
-      render();
-    })();
+    /* Old 3D wave replaced by unified video engine */
 
     // ============================================================
     // 2. INTERACTIVE 3D ROTATING NETWORK GLOBE (CANVAS)
@@ -6793,40 +6675,32 @@ section {
 
     // 1. MOUSE SPOTLIGHT ENGINE
     (
+        // ============================================================
+    // CINEMATIC GENERATED AMBIENT VIDEO BACKGROUND ENGINE
     // ============================================================
-    // GENERATIVE VIDEO CANVAS & CONTROLLER ENGINE
-    // ============================================================
-    (function initGenerativeVideoBG() {
+    (function initHeroGeneratedVideoEngine() {
+      var canvas = document.getElementById("hero-video-canvas");
       var container = document.getElementById("hero-bg-video-container");
-      var canvas = document.getElementById("generative-video-canvas");
-      var video = document.getElementById("hero-bg-video");
       var controlPill = document.getElementById("video-control-pill");
       if (!canvas || !container) return;
 
       var ctx = canvas.getContext("2d");
-      var w, h;
+      var w = 0, h = 0;
+      var dpr = 1;
       var animId;
       var isRunning = true;
-      var mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
       var time = 0;
-
-      // Ensure video element plays smoothly on all devices
-      if (video) {
-        video.muted = true;
-        var playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(function() {
-            // Autoplay policy fallback: hide video and rely on generative canvas
-            video.style.display = "none";
-          });
-        }
-      }
+      var mouseX = -9999, mouseY = -9999;
+      var targetMouseX = -9999, targetMouseY = -9999;
 
       function resize() {
         var rect = container.getBoundingClientRect();
-        var dpr = Math.min(window.devicePixelRatio || 1, 2);
-        w = canvas.width = rect.width * dpr;
-        h = canvas.height = rect.height * dpr;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = rect.width;
+        h = rect.height;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        ctx.resetTransform && ctx.resetTransform();
         ctx.scale(dpr, dpr);
       }
       resize();
@@ -6838,106 +6712,155 @@ section {
         targetMouseY = e.clientY - rect.top;
       }, { passive: true });
 
-      // Ambient Quantum Particles
-      var particleCount = window.innerWidth <= 640 ? 25 : 55;
+      // Quantum Floating Particles
+      var particleCount = window.innerWidth <= 640 ? 30 : 60;
       var particles = [];
       for (var i = 0; i < particleCount; i++) {
         particles.push({
-          x: Math.random() * (canvas.width || 1200),
-          y: Math.random() * (canvas.height || 800),
-          vx: (Math.random() - 0.5) * 0.45,
-          vy: (Math.random() - 0.5) * 0.35,
-          radius: Math.random() * 2 + 1,
-          alpha: Math.random() * 0.6 + 0.2,
-          hueOffset: Math.random() * 40
+          x: Math.random() * (w || 1200),
+          y: Math.random() * (h || 800),
+          vx: (Math.random() - 0.5) * 0.55,
+          vy: (Math.random() - 0.5) * 0.40,
+          radius: Math.random() * 2.2 + 1,
+          alpha: Math.random() * 0.6 + 0.3,
+          color: (i % 3 === 0) ? "#06b6d4" : (i % 3 === 1 ? "#6366f1" : "#a855f7")
         });
       }
+
+      var cols = 26, rows = 12;
 
       function render() {
         if (!isRunning) return;
 
-        var displayW = canvas.width / (Math.min(window.devicePixelRatio || 1, 2));
-        var displayH = canvas.height / (Math.min(window.devicePixelRatio || 1, 2));
-        ctx.clearRect(0, 0, displayW, displayH);
+        ctx.clearRect(0, 0, w, h);
+        time += 0.018;
 
-        time += 0.014;
-        mouseX += (targetMouseX - mouseX) * 0.05;
-        mouseY += (targetMouseY - mouseY) * 0.05;
+        if (targetMouseX !== -9999) {
+          mouseX += (targetMouseX - mouseX) * 0.08;
+          mouseY += (targetMouseY - mouseY) * 0.08;
+        }
 
         var isDark = document.documentElement.dataset.theme === "dark";
 
-        // 1. Flowing Volumetric Aurora Ribbons
-        var ribbonCount = 3;
-        for (var r = 0; r < ribbonCount; r++) {
+        // 1. VOLUMETRIC FLOWING CYBER AURORA RIBBONS
+        var ribbonGradients = isDark ? [
+          ["rgba(6, 182, 212, 0.24)", "rgba(99, 102, 241, 0.03)"],
+          ["rgba(168, 85, 247, 0.20)", "rgba(236, 72, 153, 0.03)"],
+          ["rgba(14, 165, 233, 0.18)", "rgba(16, 185, 129, 0.02)"]
+        ] : [
+          ["rgba(6, 182, 212, 0.12)", "rgba(99, 102, 241, 0.02)"],
+          ["rgba(168, 85, 247, 0.10)", "rgba(236, 72, 153, 0.02)"],
+          ["rgba(14, 165, 233, 0.08)", "rgba(16, 185, 129, 0.01)"]
+        ];
+
+        for (var r = 0; r < 3; r++) {
           ctx.beginPath();
-          var startY = displayH * (0.3 + r * 0.25);
+          var startY = h * (0.35 + r * 0.22);
           ctx.moveTo(0, startY);
 
-          for (var x = 0; x <= displayW; x += 30) {
-            var wave1 = Math.sin(x * 0.003 + time * 1.2 + r * 1.4) * 45;
-            var wave2 = Math.cos(x * 0.006 - time * 0.8 + r) * 30;
+          for (var x = 0; x <= w; x += 28) {
+            var wave1 = Math.sin(x * 0.0035 + time * 1.3 + r * 1.5) * 48;
+            var wave2 = Math.cos(x * 0.007 - time * 0.9 + r) * 28;
             var mouseDist = Math.hypot(x - mouseX, startY - mouseY);
-            var mousePush = Math.max(0, 70 - mouseDist * 0.25) * Math.sin(time * 3);
+            var mousePush = Math.max(0, 80 - mouseDist * 0.28) * Math.sin(time * 3);
             var y = startY + wave1 + wave2 + mousePush;
             ctx.lineTo(x, y);
           }
 
-          ctx.lineTo(displayW, displayH);
-          ctx.lineTo(0, displayH);
+          ctx.lineTo(w, h);
+          ctx.lineTo(0, h);
           ctx.closePath();
 
-          var grad = ctx.createLinearGradient(0, startY - 50, displayW, startY + 120);
-          if (isDark) {
-            if (r === 0) {
-              grad.addColorStop(0, "rgba(99, 102, 241, 0.12)");
-              grad.addColorStop(1, "rgba(6, 182, 212, 0)");
-            } else if (r === 1) {
-              grad.addColorStop(0, "rgba(168, 85, 247, 0.10)");
-              grad.addColorStop(1, "rgba(99, 102, 241, 0)");
-            } else {
-              grad.addColorStop(0, "rgba(6, 182, 212, 0.08)");
-              grad.addColorStop(1, "rgba(16, 185, 129, 0)");
-            }
-          } else {
-            grad.addColorStop(0, "rgba(79, 70, 229, 0.05)");
-            grad.addColorStop(1, "rgba(6, 182, 212, 0)");
-          }
-
+          var grad = ctx.createLinearGradient(0, startY - 60, w, startY + 140);
+          grad.addColorStop(0, ribbonGradients[r][0]);
+          grad.addColorStop(1, ribbonGradients[r][1]);
           ctx.fillStyle = grad;
           ctx.fill();
         }
 
-        // 2. Quantum Luminescent Particles with Connecting Constellation Web
+        // 2. KINETIC 3D PERSPECTIVE WIREFRAME WAVE
+        var spacingX = w / (cols - 1);
+        var spacingY = (h * 0.75) / (rows - 1);
+        var grid = [];
+
+        var lineColor = isDark ? "rgba(99, 102, 241, 0.22)" : "rgba(79, 70, 229, 0.14)";
+        var dotColor = isDark ? "rgba(6, 182, 212, 0.65)" : "rgba(79, 70, 229, 0.40)";
+
+        for (var row = 0; row < rows; row++) {
+          grid[row] = [];
+          for (var col = 0; col < cols; col++) {
+            var baseX = col * spacingX;
+            var baseY = (h * 0.25) + (row * spacingY);
+
+            var wave = Math.sin(col * 0.32 + time * 1.1) * Math.cos(row * 0.42 + time * 0.8) * 26;
+            var dist = Math.hypot(baseX - mouseX, baseY - mouseY);
+            var push = Math.max(0, 75 - dist * 0.32);
+
+            grid[row][col] = { x: baseX, y: baseY + wave - push };
+          }
+        }
+
+        // Draw grid horizontal & vertical connections
+        ctx.strokeStyle = lineColor;
+        ctx.lineWidth = 1;
+        for (var row = 0; row < rows; row++) {
+          ctx.beginPath();
+          for (var col = 0; col < cols; col++) {
+            if (col === 0) ctx.moveTo(grid[row][col].x, grid[row][col].y);
+            else ctx.lineTo(grid[row][col].x, grid[row][col].y);
+          }
+          ctx.stroke();
+        }
+        for (var col = 0; col < cols; col += 2) {
+          ctx.beginPath();
+          for (var row = 0; row < rows; row++) {
+            if (row === 0) ctx.moveTo(grid[row][col].x, grid[row][col].y);
+            else ctx.lineTo(grid[row][col].x, grid[row][col].y);
+          }
+          ctx.stroke();
+        }
+
+        // Draw grid glowing vertices
+        ctx.fillStyle = dotColor;
+        for (var row = 0; row < rows; row += 2) {
+          for (var col = 0; col < cols; col += 2) {
+            ctx.beginPath();
+            ctx.arc(grid[row][col].x, grid[row][col].y, 2, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        // 3. QUANTUM PARTICLES & CONSTELLATION PULSES
         for (var i = 0; i < particles.length; i++) {
           var p = particles[i];
           p.x += p.vx;
           p.y += p.vy;
 
-          if (p.x < 0) p.x = displayW;
-          if (p.x > displayW) p.x = 0;
-          if (p.y < 0) p.y = displayH;
-          if (p.y > displayH) p.y = 0;
+          if (p.x < 0) p.x = w;
+          if (p.x > w) p.x = 0;
+          if (p.y < 0) p.y = h;
+          if (p.y > h) p.y = 0;
 
-          // Particle draw
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = isDark
-            ? "rgba(129, 140, 248, " + p.alpha + ")"
-            : "rgba(99, 102, 241, " + (p.alpha * 0.6) + ")";
+          ctx.fillStyle = p.color;
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur = 6;
           ctx.fill();
+          ctx.shadowBlur = 0;
 
-          // Connect nearby particles
+          // Connecting light laser beams
           for (var j = i + 1; j < particles.length; j++) {
             var p2 = particles[j];
             var d = Math.hypot(p.x - p2.x, p.y - p2.y);
-            if (d < 85) {
+            if (d < 95) {
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(p2.x, p2.y);
               ctx.strokeStyle = isDark
-                ? "rgba(99, 102, 241, " + ((1 - d / 85) * 0.18) + ")"
-                : "rgba(79, 70, 229, " + ((1 - d / 85) * 0.08) + ")";
-              ctx.lineWidth = 0.8;
+                ? "rgba(99, 102, 241, " + ((1 - d / 95) * 0.28) + ")"
+                : "rgba(79, 70, 229, " + ((1 - d / 95) * 0.14) + ")";
+              ctx.lineWidth = 0.9;
               ctx.stroke();
             }
           }
@@ -6947,7 +6870,7 @@ section {
       }
       render();
 
-      // Pause when scrolled out of view to save battery/GPU
+      // Battery saver: pause when scrolled out of view
       var heroSection = document.getElementById("hero");
       if ("IntersectionObserver" in window && heroSection) {
         var observer = new IntersectionObserver(function(entries) {
@@ -6955,12 +6878,10 @@ section {
             if (entry.isIntersecting) {
               if (!isRunning && !container.classList.contains("video-disabled")) {
                 isRunning = true;
-                if (video) video.play().catch(function(){});
                 render();
               }
             } else {
               isRunning = false;
-              if (video) video.pause();
               cancelAnimationFrame(animId);
             }
           });
@@ -6968,38 +6889,36 @@ section {
         observer.observe(heroSection);
       }
 
-      // Live Toggle Control
+      // Interactive Toggle Button
       if (controlPill) {
-        controlPill.addEventListener("click", function() {
+        controlPill.addEventListener("click", function(e) {
+          e.preventDefault();
           var isCurrentlyDisabled = container.classList.contains("video-disabled");
           var textSpan = controlPill.querySelector(".video-control-text");
           var iconPause = controlPill.querySelector(".icon-pause");
           var iconPlay = controlPill.querySelector(".icon-play");
 
           if (isCurrentlyDisabled) {
-            // Enable Video BG
             container.classList.remove("video-disabled");
             controlPill.classList.remove("is-paused");
             if (textSpan) textSpan.textContent = "Video BG: Active";
             if (iconPause) iconPause.style.display = "block";
             if (iconPlay) iconPlay.style.display = "none";
             isRunning = true;
-            if (video) video.play().catch(function(){});
             render();
           } else {
-            // Disable Video BG
             container.classList.add("video-disabled");
             controlPill.classList.add("is-paused");
             if (textSpan) textSpan.textContent = "Video BG: Paused";
             if (iconPause) iconPause.style.display = "none";
             if (iconPlay) iconPlay.style.display = "block";
             isRunning = false;
-            if (video) video.pause();
             cancelAnimationFrame(animId);
           }
         });
       }
     })();
+
 
     function initSpotlight() {
       var root = document.documentElement;
