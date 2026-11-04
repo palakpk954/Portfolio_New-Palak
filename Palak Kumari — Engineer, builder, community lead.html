@@ -4841,6 +4841,571 @@ section {
   }
 }
 
+
+/* ============================================================
+   ROLE FILTER STRIP
+   ============================================================ */
+.role-filter-container {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 18px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.role-filter-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.role-filter-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.role-filter-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.role-filter-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.role-filter-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.role-filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.role-filter-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.role-filter-status {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.role-dimmed {
+  opacity: 0.35 !important;
+  filter: grayscale(0.5) !important;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.role-spotlighted {
+  opacity: 1 !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 20px var(--accent-glow) !important;
+  transform: translateY(-2px);
+  transition: all 0.4s ease;
+}
+
+/* ============================================================
+   AWS CLOUD AUTO-SCALING SIMULATOR
+   ============================================================ */
+.cloud-simulator-card {
+  margin-top: 36px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.cloud-simulator-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff9900 0%, #38bdf8 50%, var(--accent) 100%);
+}
+
+.cloud-sim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cloud-sim-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ff9900;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.cloud-sim-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.cloud-sim-desc {
+  font-size: 14px;
+  color: var(--ink-secondary);
+  max-width: 650px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cloud-sim-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge-pill.aws {
+  background: rgba(255, 153, 0, 0.12);
+  color: #ff9900;
+  border: 1px solid rgba(255, 153, 0, 0.3);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.boto-badge {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.boto-badge.steady {
+  background: var(--mint-bg);
+  color: var(--mint);
+  border: 1px solid var(--mint-border);
+}
+
+.boto-badge.scale-out {
+  background: var(--amber-bg);
+  color: var(--amber);
+  border: 1px solid var(--amber-border);
+  animation: pulse-dot 1.5s infinite;
+}
+
+.boto-badge.scale-in {
+  background: var(--sky-bg);
+  color: var(--sky);
+  border: 1px solid var(--sky-border);
+}
+
+.sim-presets-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sim-presets-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sim-preset-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sim-preset-btn:hover {
+  border-color: #ff9900;
+  color: #ff9900;
+  background: var(--surface);
+}
+
+.sim-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.sim-control-box {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.sim-control-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.sim-control-val {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.sim-slider {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.sim-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sim-metric-cell {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+}
+
+.sm-label {
+  display: block;
+  font-size: 10.5px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.sm-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.sim-instances-section {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.sim-instances-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.sim-instances-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.sim-node-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px 10px;
+  box-shadow: var(--shadow-sm);
+  animation: node-appear 0.3s ease-out;
+}
+
+@keyframes node-appear {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.node-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.node-id-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.node-beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 6px var(--mint);
+}
+
+.node-id {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.node-type {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9.5px;
+  color: var(--muted);
+}
+
+.node-cpu-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.node-cpu-label {
+  color: var(--muted);
+}
+
+.node-cpu-val {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.node-bar-track {
+  width: 100%;
+  height: 5px;
+  background: var(--surface-alt);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.node-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* ============================================================
+   DEVELOPER CLI TERMINAL MODAL
+   ============================================================ */
+.terminal-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(8, 10, 18, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.terminal-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.terminal-window {
+  width: 100%;
+  max-width: 780px;
+  height: 520px;
+  max-height: 85vh;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-glow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminal-modal.is-open .terminal-window {
+  transform: scale(1) translateY(0);
+}
+
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #161b22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.terminal-hint {
+  font-size: 11px;
+  color: #484f58;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.term-quick-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #0d1117;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.term-pill-cmd {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #21262d;
+  color: #58a6ff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.term-pill-cmd:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #c9d1d9;
+}
+
+.term-row {
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.term-echo {
+  color: #58a6ff;
+}
+
+.term-prompt {
+  color: #7ee787;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.terminal-input-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: #161b22;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13.5px;
+  color: #f0f6fc;
+}
+
+/* Syntax colors inside terminal */
+.c-gold { color: #f2cc60; font-weight: 700; }
+.c-cyan { color: #79c0ff; }
+.c-green { color: #7ee787; }
+.c-purple { color: #d2a8ff; }
+.c-red { color: #ff7b72; }
+.term-link { color: #58a6ff; text-decoration: underline; }
+
+/* Sound toggle active state in dock */
+.dock-item.btn-toggle-sound.sound-active {
+  color: var(--mint) !important;
+  border-color: var(--mint) !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+@media (max-width: 768px) {
+  .sim-controls-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .role-filter-container {
+    padding: 14px 16px;
+  }
+  .cloud-simulator-card {
+    padding: 20px 16px;
+  }
+  .terminal-window {
+    height: 92vh;
+    border-radius: 10px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -5070,6 +5635,26 @@ section {
       </div>
     </div>
   </section>
+
+
+  <!-- TAILORED RECRUITER ROLE FILTER STRIP -->
+  <div class="wrap" style="margin-top: 24px; margin-bottom: 24px;">
+    <div class="role-filter-container">
+      <div class="role-filter-header">
+        <span class="role-filter-tag">Recruiter Perspective</span>
+        <span class="role-filter-label">Customize Portfolio View:</span>
+      </div>
+      <div class="role-filter-buttons">
+        <button class="role-filter-btn active" data-role="all" type="button">All Disciplines</button>
+        <button class="role-filter-btn" data-role="cloud" type="button">Cloud &amp; Backend</button>
+        <button class="role-filter-btn" data-role="dsa" type="button">Distributed Systems &amp; DSA</button>
+        <button class="role-filter-btn" data-role="fullstack" type="button">Full Stack &amp; AI</button>
+      </div>
+      <div class="role-filter-status" id="role-filter-status">
+        Showing all engineering disciplines, credentials, and featured projects.
+      </div>
+    </div>
+  </div>
 
   <!-- ABOUT SECTION -->
   <section id="about">
@@ -5799,6 +6384,81 @@ section {
         </div>
         </div>
       </div>
+
+        <!-- LIVE AWS CLOUD AUTO-SCALING & LATENCY SIMULATOR -->
+        <div class="cloud-simulator-card" id="cloud-lab">
+          <div class="cloud-sim-header">
+            <div>
+              <div class="cloud-sim-tag">AWS Cloud Architecture Lab</div>
+              <h3 class="cloud-sim-title">Live Auto-Scaling Group (ASG) &amp; Latency Simulator</h3>
+              <p class="cloud-sim-desc">
+                Interactive engineering model of dynamic Boto3 queue polling, EC2 capacity scaling, P99 latency response, and automated cost optimization.
+              </p>
+            </div>
+            <div class="cloud-sim-badges">
+              <span class="badge-pill aws">AWS Solutions Architect</span>
+              <span class="badge-pill boto" id="sim-boto-status"><span class="boto-badge steady">Boto3: Steady State Maintained</span></span>
+            </div>
+          </div>
+
+          <!-- Presets -->
+          <div class="sim-presets-bar">
+            <span class="sim-presets-label">Traffic Presets:</span>
+            <button class="sim-preset-btn" data-preset="idle" type="button">Idle Off-Peak (60 rps)</button>
+            <button class="sim-preset-btn" data-preset="baseline" type="button">Steady State (450 rps)</button>
+            <button class="sim-preset-btn" data-preset="spike" type="button">Traffic Spike (3,200 rps)</button>
+            <button class="sim-preset-btn" data-preset="peak" type="button">Viral Peak (8,500 rps)</button>
+          </div>
+
+          <!-- Sliders -->
+          <div class="sim-controls-grid">
+            <div class="sim-control-box">
+              <div class="sim-control-label-row">
+                <span>Incoming Traffic Load</span>
+                <span class="sim-control-val" id="sim-val-rps">450 req/sec</span>
+              </div>
+              <input type="range" id="sim-slider-rps" class="sim-slider" min="50" max="10000" step="50" value="450" />
+            </div>
+            <div class="sim-control-box">
+              <div class="sim-control-label-row">
+                <span>Target EC2 CPU Saturation Threshold</span>
+                <span class="sim-control-val" id="sim-val-cpu">70%</span>
+              </div>
+              <input type="range" id="sim-slider-cpu" class="sim-slider" min="50" max="90" step="5" value="70" />
+            </div>
+          </div>
+
+          <!-- Live Metrics Bar -->
+          <div class="sim-metrics-strip">
+            <div class="sim-metric-cell">
+              <span class="sm-label">Active Capacity</span>
+              <span class="sm-value" id="sim-metric-nodes">1 x EC2</span>
+            </div>
+            <div class="sim-metric-cell">
+              <span class="sm-label">P99 Latency</span>
+              <span class="sm-value" id="sim-metric-latency" style="color:var(--mint);">34 ms</span>
+            </div>
+            <div class="sim-metric-cell">
+              <span class="sm-label">Monthly Cloud Spend</span>
+              <span class="sm-value" id="sim-metric-cost">$62/mo</span>
+            </div>
+            <div class="sim-metric-cell">
+              <span class="sm-label">Automated Boto3 Savings</span>
+              <span class="sm-value" id="sim-metric-savings" style="color:var(--mint);">-65% Saved</span>
+            </div>
+            <div class="sim-metric-cell">
+              <span class="sm-label">Cluster Availability</span>
+              <span class="sm-value" id="sim-metric-health" style="color:var(--mint);">99.99% (Optimal)</span>
+            </div>
+          </div>
+
+          <!-- Live Dynamic EC2 Instance Nodes Grid -->
+          <div class="sim-instances-section">
+            <div class="sim-instances-label">Auto-Scaling Group Fleet (Elastic EC2 Workers):</div>
+            <div class="sim-instances-grid" id="sim-instances-grid"></div>
+          </div>
+        </div>
+
     </div>
   </section>
 
@@ -7810,7 +8470,596 @@ section {
   }
 })();
 
+  
+
+    // ============================================================
+    // ADVANCED INTERACTION ENGINES: SOUND, TERMINAL, SIMULATOR & ROLES
+    // ============================================================
+    
+(function() {
+  var audioCtx = null;
+  var isSoundEnabled = false;
+
+  try {
+    isSoundEnabled = localStorage.getItem("sound_fx_enabled") === "true";
+  } catch(e) {}
+
+  function getAudioContext() {
+    if (!audioCtx) {
+      var AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) audioCtx = new AudioContextClass();
+    }
+    if (audioCtx && audioCtx.state === "suspended") {
+      audioCtx.resume();
+    }
+    return audioCtx;
+  }
+
+  window.playMechanicalClick = function() {
+    if (!isSoundEnabled) return;
+    var ctx = getAudioContext();
+    if (!ctx) return;
+
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(1100, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.035);
+
+    gain.gain.setValueAtTime(0.08, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.035);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.04);
+  };
+
+  window.playWhooshSound = function() {
+    if (!isSoundEnabled) return;
+    var ctx = getAudioContext();
+    if (!ctx) return;
+
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(240, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(680, ctx.currentTime + 0.12);
+
+    gain.gain.setValueAtTime(0.06, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.15);
+  };
+
+  window.playSuccessChime = function() {
+    if (!isSoundEnabled) return;
+    var ctx = getAudioContext();
+    if (!ctx) return;
+
+    var freqs = [784, 1046];
+    freqs.forEach(function(f, idx) {
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(f, ctx.currentTime + idx * 0.08);
+
+      gain.gain.setValueAtTime(0.07, ctx.currentTime + idx * 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.08 + 0.35);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(ctx.currentTime + idx * 0.08);
+      osc.stop(ctx.currentTime + idx * 0.08 + 0.38);
+    });
+  };
+
+  window.toggleSoundEffects = function() {
+    isSoundEnabled = !isSoundEnabled;
+    try {
+      localStorage.setItem("sound_fx_enabled", isSoundEnabled.toString());
+    } catch(e) {}
+    updateSoundUI();
+    if (isSoundEnabled) {
+      window.playSuccessChime();
+    }
+    return isSoundEnabled;
+  };
+
+  function updateSoundUI() {
+    var soundBtns = document.querySelectorAll(".btn-toggle-sound");
+    soundBtns.forEach(function(btn) {
+      if (isSoundEnabled) {
+        btn.classList.add("sound-active");
+        btn.setAttribute("title", "Sound Effects: Active (Click to mute)");
+      } else {
+        btn.classList.remove("sound-active");
+        btn.setAttribute("title", "Sound Effects: Muted (Click to enable)");
+      }
+    });
+  }
+
+  function initSoundEngine() {
+    updateSoundUI();
+    document.querySelectorAll(".btn-toggle-sound").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.toggleSoundEffects();
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSoundEngine);
+  } else {
+    initSoundEngine();
+  }
+})();
+
+
+    
+(function() {
+  function bootTerminalCLI() {
+    var modal = document.getElementById("terminal-modal");
+    var termBody = document.getElementById("term-body");
+    var termInput = document.getElementById("term-input");
+    var btnClose = document.getElementById("term-close-btn");
+    var openBtns = document.querySelectorAll(".btn-open-terminal");
+
+    if (!modal || !termInput) return;
+
+    var history = [];
+    var historyIdx = -1;
+
+    function openTerminal() {
+      modal.classList.add("is-open");
+      termInput.focus();
+      if (window.playMechanicalClick) window.playMechanicalClick();
+    }
+
+    function closeTerminal() {
+      modal.classList.remove("is-open");
+      if (window.playMechanicalClick) window.playMechanicalClick();
+    }
+
+    openBtns.forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        openTerminal();
+      });
+    });
+
+    if (btnClose) {
+      btnClose.addEventListener("click", closeTerminal);
+    }
+
+    modal.addEventListener("click", function(e) {
+      if (e.target === modal) closeTerminal();
+    });
+
+    window.addEventListener("keydown", function(e) {
+      if (e.key === "`" || e.key === "~") {
+        if (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+          e.preventDefault();
+          if (modal.classList.contains("is-open")) closeTerminal();
+          else openTerminal();
+        }
+      } else if (e.key === "Escape" && modal.classList.contains("is-open")) {
+        closeTerminal();
+      }
+    });
+
+    var commandResponses = {
+      help: [
+        "<span class='c-gold'>Available Commands:</span>",
+        "  <span class='c-cyan'>skills</span>        - Technical arsenal across Cloud, Java, and Systems",
+        "  <span class='c-cyan'>projects</span>      - Featured engineering builds &amp; github repos",
+        "  <span class='c-cyan'>stats</span>         - Codolio &amp; LeetCode (839+ solved) &amp; GitHub metrics",
+        "  <span class='c-cyan'>exp</span>           - Work experience (NECTA, AkooBooks, DevBox, Psyliq)",
+        "  <span class='c-cyan'>cert</span>          - 7x industry credentials (AWS, Java SE 21, Junos)",
+        "  <span class='c-cyan'>contact</span>       - Direct email, LinkedIn, and GitHub links",
+        "  <span class='c-cyan'>theme</span>         - Toggle dark/light theme mode",
+        "  <span class='c-cyan'>sound</span>         - Toggle synthesized mechanical audio FX",
+        "  <span class='c-cyan'>clear</span>         - Clear terminal output buffer",
+        "  <span class='c-purple'>sudo hire palak</span> - Run offer generation protocol"
+      ],
+      skills: [
+        "<span class='c-gold'>Technical Arsenal:</span>",
+        "  <span class='c-cyan'>Languages:</span>   Java (SE 21), Python, C#, JavaScript (ES6+), SQL, C++",
+        "  <span class='c-cyan'>Cloud &amp; Ops:</span>  AWS (EC2, S3, CloudWatch, Boto3, ASG, IAM), Docker, CI/CD",
+        "  <span class='c-cyan'>Frameworks:</span>  Spring Boot, .NET MVC, Django, REST APIs, Microservices",
+        "  <span class='c-cyan'>Platforms:</span>   Microsoft Fabric, ServiceNow CIS, JNCIA-Junos Networks"
+      ],
+      stats: [
+        "<span class='c-gold'>Verified Developer Metrics:</span>",
+        "  Codolio Total Solved:    <span class='c-green'>839 Problems</span>",
+        "  Problem Distribution:   Easy: 320 (38%) | Med: 415 (49%) | Hard: 104 (13%)",
+        "  LeetCode Contest Rating: <span class='c-cyan'>1500</span> | Active Coding Days: <span class='c-cyan'>264</span>",
+        "  GitHub Contributions:    <span class='c-green'>708</span> | Repositories: <span class='c-cyan'>28+</span>"
+      ],
+      projects: [
+        "<span class='c-gold'>Featured Projects:</span>",
+        "  1. <span class='c-cyan'>ISL-Converter:</span> Real-time sign language vision pipeline (SIH 2nd Prize)",
+        "  2. <span class='c-cyan'>Placement_Helper:</span> Full-stack interview prep tool (Live on Render)",
+        "  3. <span class='c-cyan'>AWS-automation:</span> Auto-scaling inference worker cluster via Boto3",
+        "  4. <span class='c-cyan'>Regional-Risk:</span> Geo-spatial landslide alert system with Leaflet",
+        "  5. <span class='c-cyan'>Transport-Mgmt:</span> ACID transactional fleet dispatch in Django"
+      ],
+      exp: [
+        "<span class='c-gold'>Engineering Experience:</span>",
+        "  * <span class='c-cyan'>NECTA (Tanzania):</span> Full Stack .NET Intern - 40% faster invoicing for 5,000+ records",
+        "  * <span class='c-cyan'>AkooBooks (Ghana):</span> Backend &amp; Data Intern - 25% faster audio queries via SQL pipelines",
+        "  * <span class='c-cyan'>DevBox Technologies:</span> Web Dev Intern - 5+ production client platforms",
+        "  * <span class='c-cyan'>Psyliq (Bengaluru):</span> Data Science Intern - automated stakeholder dashboards (+30% eff)"
+      ],
+      cert: [
+        "<span class='c-gold'>7x Industry Certifications:</span>",
+        "  - AWS Certified Solutions Architect - Associate",
+        "  - AWS Certified Developer - Associate",
+        "  - AWS Certified Cloud Practitioner",
+        "  - Oracle Certified Professional: Java SE 21 (1Z0-830)",
+        "  - Microsoft Certified: Fabric Data Engineer Associate",
+        "  - ServiceNow Certified Implementation Specialist (CIS - Data Foundation)",
+        "  - JNCIA-Junos (HPE Juniper Networks)"
+      ],
+      contact: [
+        "<span class='c-gold'>Get in Touch:</span>",
+        "  Email:    <a class='term-link' href='mailto:palakpk954@gmail.com'>palakpk954@gmail.com</a>",
+        "  LinkedIn: <a class='term-link' href='https://www.linkedin.com/in/palak-kumari-359218258' target='_blank'>linkedin.com/in/palak-kumari-359218258</a>",
+        "  GitHub:   <a class='term-link' href='https://github.com/palakpk954' target='_blank'>github.com/palakpk954</a>"
+      ]
+    };
+
+    function executeCommand(raw) {
+      var cmd = raw.trim().toLowerCase();
+      if (window.playMechanicalClick) window.playMechanicalClick();
+
+      var cmdRow = document.createElement("div");
+      cmdRow.className = "term-row term-echo";
+      cmdRow.innerHTML = "<span class='term-prompt'>palak@portfolio:~$</span> " + escapeHtml(raw);
+      termBody.appendChild(cmdRow);
+
+      if (cmd === "") {
+        scrollToBottom();
+        return;
+      }
+
+      history.push(raw);
+      historyIdx = history.length;
+
+      var outRow = document.createElement("div");
+      outRow.className = "term-row term-out";
+
+      if (cmd === "clear") {
+        termBody.innerHTML = "";
+        return;
+      } else if (cmd === "exit") {
+        closeTerminal();
+        return;
+      } else if (cmd === "theme") {
+        var root = document.documentElement;
+        var cur = root.getAttribute("data-theme") || "dark";
+        var next = cur === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch(e) {}
+        outRow.innerHTML = "<span class='c-green'>Theme switched to " + next + " mode.</span>";
+      } else if (cmd === "sound") {
+        var active = window.toggleSoundEffects ? window.toggleSoundEffects() : false;
+        outRow.innerHTML = "<span class='c-green'>Sound FX: " + (active ? "ACTIVE (Chime &amp; Clicks Enabled)" : "MUTED") + "</span>";
+      } else if (cmd === "sudo hire palak" || cmd === "hire palak" || cmd === "hire") {
+        if (window.playSuccessChime) window.playSuccessChime();
+        outRow.innerHTML = [
+          "<span class='c-gold'>============================================================</span>",
+          "<span class='c-green'>[ACCESS GRANTED] Initiating Engineering Recruitment Protocol</span>",
+          "<span class='c-gold'>============================================================</span>",
+          "Candidate: Palak Kumari (Incoming R&amp;D Engineer @ HPE)",
+          "Specialization: Cloud Architecture (AWS), Java SE 21, Distributed Backend",
+          "Action: Opening email drafting pipeline to palakpk954@gmail.com...",
+          "<span class='c-cyan'>Status: Ready to build reliable, high-throughput systems!</span>"
+        ].join("<br>");
+        setTimeout(function() {
+          window.location.href = "mailto:palakpk954@gmail.com?subject=Engineering%20Opportunity%20for%20Palak%20Kumari";
+        }, 1400);
+      } else if (commandResponses[cmd]) {
+        outRow.innerHTML = commandResponses[cmd].join("<br>");
+      } else {
+        outRow.innerHTML = "<span class='c-red'>Command not recognized: '" + escapeHtml(cmd) + "'. Type 'help' for available commands.</span>";
+      }
+
+      termBody.appendChild(outRow);
+      scrollToBottom();
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function scrollToBottom() {
+      termBody.scrollTop = termBody.scrollHeight;
+    }
+
+    termInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        executeCommand(termInput.value);
+        termInput.value = "";
+      } else if (e.key === "ArrowUp") {
+        if (history.length > 0 && historyIdx > 0) {
+          historyIdx--;
+          termInput.value = history[historyIdx];
+        }
+      } else if (e.key === "ArrowDown") {
+        if (historyIdx < history.length - 1) {
+          historyIdx++;
+          termInput.value = history[historyIdx];
+        } else {
+          historyIdx = history.length;
+          termInput.value = "";
+        }
+      }
+    });
+
+    document.querySelectorAll(".term-pill-cmd").forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        var cmd = pill.dataset.cmd;
+        if (cmd) executeCommand(cmd);
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootTerminalCLI);
+  } else {
+    bootTerminalCLI();
+  }
+})();
+
+
+    
+(function() {
+  function bootCloudSimulator() {
+    var sliderRps = document.getElementById("sim-slider-rps");
+    var sliderCpu = document.getElementById("sim-slider-cpu");
+    var valRps = document.getElementById("sim-val-rps");
+    var valCpu = document.getElementById("sim-val-cpu");
+
+    var metricNodes = document.getElementById("sim-metric-nodes");
+    var metricLatency = document.getElementById("sim-metric-latency");
+    var metricCost = document.getElementById("sim-metric-cost");
+    var metricSavings = document.getElementById("sim-metric-savings");
+    var metricHealth = document.getElementById("sim-metric-health");
+    var instancesGrid = document.getElementById("sim-instances-grid");
+    var botoStatus = document.getElementById("sim-boto-status");
+
+    if (!sliderRps || !instancesGrid) return;
+
+    var presets = {
+      baseline: { rps: 450, cpu: 70 },
+      spike: { rps: 3200, cpu: 75 },
+      peak: { rps: 8500, cpu: 80 },
+      idle: { rps: 60, cpu: 65 }
+    };
+
+    function updateSimulation() {
+      var rps = parseInt(sliderRps.value, 10);
+      var targetCpu = parseInt(sliderCpu.value, 10);
+
+      if (valRps) valRps.textContent = rps.toLocaleString() + " req/sec";
+      if (valCpu) valCpu.textContent = targetCpu + "%";
+
+      var capacityPerNode = (targetCpu / 70) * 1150;
+      var rawNodesNeeded = Math.ceil(rps / capacityPerNode);
+      var activeNodes = Math.max(1, Math.min(8, rawNodesNeeded));
+
+      var actualCpuPerNode = Math.min(98, Math.round((rps / (activeNodes * 1150)) * 70));
+
+      var baseLatency = 24;
+      var loadPenalty = (actualCpuPerNode > 80) ? Math.pow((actualCpuPerNode - 80), 1.5) * 1.8 : 0;
+      var p99Latency = Math.round(baseLatency + (actualCpuPerNode * 0.18) + loadPenalty);
+
+      var monthlyCost = Math.round(activeNodes * 38.5 + 24);
+      var unoptimizedStaticCost = Math.round(8 * 38.5 + 24);
+      var savingsPct = Math.round(((unoptimizedStaticCost - monthlyCost) / unoptimizedStaticCost) * 100);
+
+      if (metricNodes) metricNodes.textContent = activeNodes + " x EC2";
+      if (metricLatency) {
+        metricLatency.textContent = p99Latency + " ms";
+        metricLatency.style.color = (p99Latency < 60) ? "var(--mint)" : (p99Latency < 120 ? "var(--amber)" : "var(--rose)");
+      }
+      if (metricCost) metricCost.textContent = "$" + monthlyCost + "/mo";
+      if (metricSavings) metricSavings.textContent = "-" + savingsPct + "% Saved";
+      if (metricHealth) {
+        if (actualCpuPerNode < 85) {
+          metricHealth.textContent = "99.99% (Optimal)";
+          metricHealth.style.color = "var(--mint)";
+        } else if (actualCpuPerNode < 95) {
+          metricHealth.textContent = "99.90% (Scaling Out)";
+          metricHealth.style.color = "var(--amber)";
+        } else {
+          metricHealth.textContent = "99.50% (High Saturation)";
+          metricHealth.style.color = "var(--rose)";
+        }
+      }
+
+      if (botoStatus) {
+        if (actualCpuPerNode > targetCpu) {
+          botoStatus.innerHTML = "<span class='boto-badge scale-out'>Boto3: Scale-Out Triggered (+1)</span>";
+        } else if (actualCpuPerNode < targetCpu - 25 && activeNodes > 1) {
+          botoStatus.innerHTML = "<span class='boto-badge scale-in'>Boto3: Scale-In Initiated (-1)</span>";
+        } else {
+          botoStatus.innerHTML = "<span class='boto-badge steady'>Boto3: Steady State Maintained</span>";
+        }
+      }
+
+      instancesGrid.innerHTML = "";
+      var ids = ["i-0a81f9", "i-0c42e1", "i-091ba4", "i-0d77c2", "i-054fe3", "i-0b2981", "i-077a94", "i-0ff318"];
+
+      for (var i = 0; i < activeNodes; i++) {
+        var nodeDiv = document.createElement("div");
+        nodeDiv.className = "sim-node-card";
+        var gaugeColor = (actualCpuPerNode < 75) ? "var(--mint)" : (actualCpuPerNode < 90 ? "var(--amber)" : "var(--rose)");
+
+        nodeDiv.innerHTML = [
+          "<div class='node-card-header'>",
+          "  <div class='node-id-group'>",
+          "    <span class='node-beacon'></span>",
+          "    <span class='node-id'>" + ids[i] + "</span>",
+          "  </div>",
+          "  <span class='node-type'>t3.xlarge</span>",
+          "</div>",
+          "<div class='node-cpu-row'>",
+          "  <span class='node-cpu-label'>CPU Load</span>",
+          "  <span class='node-cpu-val' style='color:" + gaugeColor + ";'>" + actualCpuPerNode + "%</span>",
+          "</div>",
+          "<div class='node-bar-track'>",
+          "  <div class='node-bar-fill' style='width:" + actualCpuPerNode + "%; background:" + gaugeColor + ";'></div>",
+          "</div>"
+        ].join("");
+
+        instancesGrid.appendChild(nodeDiv);
+      }
+    }
+
+    sliderRps.addEventListener("input", function() {
+      updateSimulation();
+      if (window.playMechanicalClick && Math.random() < 0.25) window.playMechanicalClick();
+    });
+
+    sliderCpu.addEventListener("input", function() {
+      updateSimulation();
+      if (window.playMechanicalClick && Math.random() < 0.25) window.playMechanicalClick();
+    });
+
+    document.querySelectorAll(".sim-preset-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var p = presets[btn.dataset.preset];
+        if (p) {
+          sliderRps.value = p.rps;
+          sliderCpu.value = p.cpu;
+          updateSimulation();
+          if (window.playMechanicalClick) window.playMechanicalClick();
+        }
+      });
+    });
+
+    updateSimulation();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootCloudSimulator);
+  } else {
+    bootCloudSimulator();
+  }
+})();
+
+
+    
+(function() {
+  function bootRoleFilter() {
+    var filterBtns = document.querySelectorAll(".role-filter-btn");
+    var statusBanner = document.getElementById("role-filter-status");
+
+    if (!filterBtns.length) return;
+
+    var descriptions = {
+      all: "Showing all engineering disciplines, credentials, and featured projects.",
+      cloud: "Spotlighting Cloud Infrastructure on AWS, Boto3 automation, Java/Spring backend, and enterprise data pipelines.",
+      dsa: "Spotlighting 839+ DSA algorithms, LeetCode 1500 rating, interactive graph visualizers, and system architecture stacks.",
+      fullstack: "Spotlighting production web applications, SIH award-winning computer vision (ISL), and geo-spatial analytics."
+    };
+
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var targetRole = btn.dataset.role;
+
+        filterBtns.forEach(function(b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+
+        if (window.playMechanicalClick) window.playMechanicalClick();
+
+        if (statusBanner && descriptions[targetRole]) {
+          statusBanner.textContent = descriptions[targetRole];
+        }
+
+        var allCards = document.querySelectorAll(".project-card, .exp-card, .cert-card, .pillar-card");
+        allCards.forEach(function(card) {
+          if (targetRole === "all") {
+            card.classList.remove("role-dimmed", "role-spotlighted");
+          } else {
+            var categories = ((card.dataset.category || "") + " " + (card.className || "") + " " + (card.innerText || "")).toLowerCase();
+            var isMatch = false;
+
+            if (targetRole === "cloud" && (categories.includes("cloud") || categories.includes("aws") || categories.includes("spring") || categories.includes("data") || categories.includes("backend"))) {
+              isMatch = true;
+            } else if (targetRole === "dsa" && (categories.includes("dsa") || categories.includes("codolio") || categories.includes("leetcode") || categories.includes("algorithm") || categories.includes("graph") || categories.includes("system"))) {
+              isMatch = true;
+            } else if (targetRole === "fullstack" && (categories.includes("fullstack") || categories.includes("ai") || categories.includes("vision") || categories.includes("web") || categories.includes("isl") || categories.includes("render"))) {
+              isMatch = true;
+            }
+
+            if (isMatch) {
+              card.classList.remove("role-dimmed");
+              card.classList.add("role-spotlighted");
+            } else {
+              card.classList.remove("role-spotlighted");
+              card.classList.add("role-dimmed");
+            }
+          }
+        });
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootRoleFilter);
+  } else {
+    bootRoleFilter();
+  }
+})();
+
+
   </script>
+  
+  <!-- DEVELOPER CLI TERMINAL MODAL -->
+  <div class="terminal-modal" id="terminal-modal" role="dialog" aria-label="Developer Terminal">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="window-dots">
+          <span class="dot dot-red" id="term-close-btn" title="Close (Esc)"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="terminal-title">palak@portfolio: ~ (bash 5.2 &bull; type 'help')</div>
+        <div class="terminal-hint">Press Esc or ~ to toggle</div>
+      </div>
+
+      <div class="term-quick-pills">
+        <span class="term-pill-cmd" data-cmd="help">help</span>
+        <span class="term-pill-cmd" data-cmd="skills">skills</span>
+        <span class="term-pill-cmd" data-cmd="projects">projects</span>
+        <span class="term-pill-cmd" data-cmd="stats">stats</span>
+        <span class="term-pill-cmd" data-cmd="exp">exp</span>
+        <span class="term-pill-cmd" data-cmd="cert">cert</span>
+        <span class="term-pill-cmd" data-cmd="contact">contact</span>
+        <span class="term-pill-cmd" data-cmd="sudo hire palak">sudo hire palak</span>
+      </div>
+
+      <div class="terminal-body" id="term-body">
+        <div class="term-row term-welcome">
+          <span class="c-gold">Palak Kumari -- Interactive Developer CLI [Version 2.4.0]</span><br>
+          Type <span class="c-cyan">'help'</span> to see available commands or tap the quick pills above.
+        </div>
+      </div>
+
+      <div class="terminal-input-bar">
+        <span class="term-prompt">palak@portfolio:~$</span>
+        <input type="text" class="terminal-input" id="term-input" autocomplete="off" spellcheck="false" placeholder="Type command here (e.g. skills, stats, projects)..." />
+      </div>
+    </div>
+  </div>
+
   <!-- FLOATING QUICK DOCK -->
   <div class="floating-quick-dock" id="quick-dock">
     <a class="dock-item" href="#hero" title="Intro">
@@ -7842,6 +9091,15 @@ section {
       <span class="dock-tooltip">Contact</span>
     </a>
     <div class="dock-divider"></div>
+    <button class="dock-item btn-open-terminal" type="button" title="Open Developer CLI (Press ~)">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+      <span class="dock-tooltip">Terminal (~)</span>
+    </button>
+    <button class="dock-item btn-toggle-sound" type="button" title="Toggle Sound Effects">
+      <svg class="sound-icon-on" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+      <span class="dock-tooltip">Sound</span>
+    </button>
+    
     <button class="dock-item dock-btn-theme" type="button" id="dock-theme-toggle" title="Toggle Theme">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       <span class="dock-tooltip">Theme</span>
